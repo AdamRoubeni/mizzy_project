@@ -281,12 +281,14 @@
 
   <section class="contact-page">
     <h1>Contact Us</h1>
-    <form id="contact-form">
+    <form id="contact-form" method="POST" action="https://mizzy-project.onrender.com/contact">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+  </section>
+  
     
     <div class="contact-details">
       <p><strong>Email:</strong> sales@ene-ltd.com</p>
@@ -321,8 +323,8 @@
       const data = Object.fromEntries(formData);
   
       try {
-        const response = await fetch('http://localhost:3001/contact', {
-          method: 'POST',
+        const response = await fetch('https://mizzy-project.onrender.com/contact', {
+
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
