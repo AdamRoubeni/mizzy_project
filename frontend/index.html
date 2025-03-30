@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ENE LTD | Luxury Brand Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <style>
+    /* Modern e-commerce styling */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary-color: #111;
+      --secondary-color: #f8f8f8;
+      --accent-color: #9c8c6e;
+      --text-light: #ffffff;
+      --text-dark: #121212;
+      --text-gray: #767676;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--secondary-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .nav-btn {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-btn.primary {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+    }
+    
+    .nav-btn.primary:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+    }
+    
+    .nav-btn.secondary {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid #ddd;
+    }
+    
+    .nav-btn.secondary:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
+      overflow: hidden;
+    }
+    
+    .hero.full-banner {
+      width: 100%;
+    }
+    
+    .hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.7);
+    }
+    
+    .hero-text {
+      text-align: center;
+      color: var(--text-light);
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+    
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      border-radius: 4px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+    
+    .hero-btn:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+    
+    /* Banner Section */
+    .banner {
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: var(--secondary-color);
+    }
+    
+    .banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    
+    .banner p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-color);
+    }
+    
+    /* Categories */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 4rem 5%;
+      background-color: white;
+    }
+    
+    .category-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .category-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .category-card h3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: var(--text-light);
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+    
+    .category-card:hover h3 {
+      padding-bottom: 2rem;
+    }
+    
+    /* Top Brands */
+    .top-brands {
+      padding: 4rem 5%;
+      background-color: var(--secondary-color);
+      text-align: center;
+    }
+    
+    .top-brands h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .top-brands h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .brand-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+    }
+    
+    .brand-list p {
+      line-height: 1.8;
+      color: var(--text-gray);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 4rem 5% 2rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    footer h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    footer h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+    
+    footer p {
+      line-height: 1.8;
+      color: #ddd;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 992px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        background-color: white;
+        gap: 0.7rem;
+        padding: 2rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html" class="nav-btn primary">Shop Brands</a>
+      <a href="about.html" class="nav-btn secondary">About</a>
+      <a href="contact.html" class="nav-btn secondary">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero full-banner">
+    <img src="top_brand_images/hero_main.jpg" alt="Hero Image">
+    <div class="hero-text">
+      <h1>WORLD'S BEST BRANDS</h1>
+      <a href="shop.html" class="hero-btn">Explore Brands</a>
+    </div>
+  </section>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <h2>All goods are</h2>
+    <p>AUTHENTIC, GENUINE,<br>unused & in their original packaging</p>
+  </section>
+
+  <!-- Category Grid -->
+  <section class="categories">
+    <div class="category-card">
+      <img src="top_brand_images/ladies_apparel.jpg" alt="Ladies Apparel">
+      <h3>LADIES APPAREL</h3>
+    </div>
+    <div class="category-card">
+      <img src="top_brand_images/handbags.jpg" alt="Handbags">
+      <h3>HANDBAGS & SLG'S</h3>
+    </div>
+    <div class="category-card">
+      <img src="top_brand_images/mens_apparel.jpg" alt="Mens Apparel">
+      <h3>MENS APPAREL</h3>
+    </div>
+    <div class="category-card">
+      <img src="top_brand_images/accessories.jpg" alt="Fashion Accessories">
+      <h3>FASHION ACCESSORIES</h3>
+    </div>
+    <div class="category-card">
+      <img src="top_brand_images/eyewear.jpg" alt="Eyewear">
+      <h3>EYEWEAR</h3>
+    </div>
+    <div class="category-card">
+      <img src="top_brand_images/footwear.jpg" alt="Footwear">
+      <h3>FOOTWEAR</h3>
+    </div>
+  </section>
+
+  <!-- Top Brands -->
+  <section class="top-brands">
+    <h2>TOP BRANDS</h2>
+    <div class="brand-list">
+      <p>BREITLING, BROOKS, BAUME & MERCIER, CASIO, BIRKENSTOCK, KENDRA SCOTT, MONTBLANC, MARC JACOBS, NIKE, PANDORA, SWAROVSKI, TORY BURCH, COACH, DOLCE & GABBANA, DAVID YURMAN, ERGOBABY, FITFLOP, FJALL RAVEN, FOSSIL, FREDERIQUE CONSTANT, GOORIN BROS, GUCCI, HAVAIANAS, HERSCHEL, HEYDUDE, HUNTER, HYDRO FLASK, JANSPORT, KATE SPADE, KEDS, LACOSTE, LAGOS, LEGO, LONGCHAMP, LONGINES, LUMINOX, MOVADO, NATIVE, NAUTICA, NEW ERA, OSPREY, OMEGA, PETZL, POLO RALPH LAUREN, RAYMOND WEIL, SALVATORE FERRAGAMO, SAUCONY, SEBAGO</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>CONTACT</h4>
+        <p>800 Third Avenue Suite A #1011<br>New York, NY 10022<br>(646) 968-2790<br>kevin.dougherty@luxurybaseus.com</p>
+      </div>
+      <div>
+        <h4>INFORMATION</h4>
+        <p>All goods are authentic, new, unused & in original brand packaging.</p>
+      </div>
+      <div>
+        <h4>MISSION</h4>
+        <p>ENE LTD's mission is to provide authentic sought-after products at competitive prices with top-tier service.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

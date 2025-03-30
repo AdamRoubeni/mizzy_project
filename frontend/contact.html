@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | ENE LTD</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    /* Modern luxury e-commerce styling */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary-color: #111;
+      --secondary-color: #f8f8f8;
+      --accent-color: #9c8c6e;
+      --text-light: #ffffff;
+      --text-dark: #121212;
+      --text-gray: #767676;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--secondary-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid #ddd;
+    }
+    
+    .nav-links a:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a.active {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+    }
+    
+    /* Contact Section */
+    .contact-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      background-color: white;
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .contact-page h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .contact-page h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    /* Form Styling */
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    
+    #contact-form input,
+    #contact-form textarea {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    #contact-form input:focus,
+    #contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 8px rgba(156, 140, 110, 0.3);
+    }
+    
+    #contact-form button {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+      align-self: flex-start;
+    }
+    
+    #contact-form button:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    
+    .contact-details {
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    .contact-details p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-gray);
+    }
+    
+    .contact-details strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 2rem 5%;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 0.9rem;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 992px) {
+      .contact-page h1 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        background-color: white;
+        gap: 0.7rem;
+        padding: 2rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .contact-page h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-page {
+        padding: 7rem 1.5rem 3rem;
+      }
+      
+      #contact-form button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-page">
+    <h1>Contact Us</h1>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    
+    <div class="contact-details">
+      <p><strong>Email:</strong> sales@ene-ltd.com</p>
+      <p><strong>Address:</strong> 22 West 48th Street, New York, NY 10036</p>
+      <p><strong>Phone:</strong> 212-951-7379</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+
+  
+
+
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      // Show immediate feedback while sending
+      Swal.fire({
+        title: 'Sending...',
+        text: 'Please wait a moment.',
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+  
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+  
+      try {
+        const response = await fetch('http://localhost:3001/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+  
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Thank you for reaching out. We’ll get back to you soon.',
+            confirmButtonColor: '#9c8c6e'
+          });
+          form.reset();
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (err) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong. Please try again later.',
+          confirmButtonColor: '#9c8c6e'
+        });
+      }
+    });
+  </script>
+  
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>

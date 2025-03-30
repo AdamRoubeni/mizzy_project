@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | ENE LTD</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Modern luxury e-commerce styling */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary-color: #111;
+      --secondary-color: #f8f8f8;
+      --accent-color: #9c8c6e;
+      --text-light: #ffffff;
+      --text-dark: #121212;
+      --text-gray: #767676;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--secondary-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid #ddd;
+    }
+    
+    .nav-links a:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a.active {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+    }
+    
+    /* About Section */
+    .about.full-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      background-color: white;
+      box-shadow: var(--shadow);
+      border-radius: 4px;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .about h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .about h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    .about h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: var(--accent-color);
+    }
+    
+    .about p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-gray);
+      line-height: 1.8;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 2rem 5%;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 0.9rem;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 992px) {
+      .about h1 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        background-color: white;
+        gap: 0.7rem;
+        padding: 2rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .about h1 {
+        font-size: 2rem;
+      }
+      
+      .about h2 {
+        font-size: 1.5rem;
+      }
+      
+      .about.full-page {
+        padding: 7rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about full-page">
+    <h1>About ENE LTD</h1>
+
+    <h2>WHO WE ARE</h2>
+    <p>
+      With 35 years of experience in marketing, distribution, and logistics, ENE serves both e-commerce businesses and brick-and-mortar stores across the United States. Our long-standing relationships with vendors and suppliers give our customers a competitive edge in the ever-evolving retail landscape.
+    </p>
+
+    <h2>WHAT WE DO</h2>
+    <p>
+      At ENE, we focus on empowering our customers with strategic guidance on product selection, purchasing decisions, merchandising, and pricing strategies — ensuring they stay ahead in both online and offline markets.
+    </p>
+
+    <h2>HOW WE DO IT</h2>
+    <p>
+      We offer access to the latest products and trends, providing pre-book, in-stock, and special-order options through our extensive network to meet all your business needs.
+    </p>
+    <p>
+      Our comprehensive 3rd-party warehouse takes care of inventory management, shipping, and returns—allowing you to optimize operations and maximize profitability while we handle the logistics.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

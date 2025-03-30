@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casio | ENE LTD</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script defer src="checkout.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #767676;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Brand Section */
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .brand-logo {
+      width: 120px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .brand-info {
+      color: #767676;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Product Grid */
+    .product-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: #767676;
+      font-size: 0.85rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Brand Section -->
+  <section class="brand-container">
+    <img src="top_brand_images/casio_banner.jpg" alt="Casio Logo" class="brand-logo">
+    <h1 class="brand-title">CASIO</h1>
+    <p class="brand-info">Minimum Order QTY 48 PCS / SKU</p>
+  </section>
+  
+
+
+
+
+
+
+
+
+  <!-- Product Grid -->
+<div class="product-container">
+    <div class="product-grid">
+      <div class="product-card" data-name="Casio G-Shock DW-5600" data-price="$74.95" data-img="casio.npg/casio1.npg.avif" data-description="The iconic G-Shock with its square design and exceptional durability. Features 200M water resistance, shock protection, and classic digital display with backlight.">
+        <div class="product-image">
+          <img src="casio.npg/casio1.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio G-Shock DW-5600</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Casio Edifice Chronograph" data-price="$74.95" data-img="casio.npg/casio2.npg.avif" data-description="Sophisticated chronograph watch combining style and functionality. Features stainless steel construction, multiple sub-dials, and precise quartz movement.">
+        <div class="product-image">
+          <img src="casio.npg/casio2.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio Edifice Chronograph</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Casio Pro Trek Smart" data-price="$74.95" data-img="casio.npg/casio3.npg.avif" data-description="Advanced outdoor smartwatch with built-in GPS, altimeter, barometer, and compass. Perfect for hikers and outdoor enthusiasts with durable construction.">
+        <div class="product-image">
+          <img src="casio.npg/casio3.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio Pro Trek Smart</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Casio Vintage Digital" data-price="$74.95" data-img="casio.npg/casio4.npg.avif" data-description="Classic retro design with modern functionality. Features slim profile, stainless steel band, daily alarm, stopwatch and iconic digital display.">
+        <div class="product-image">
+          <img src="casio.npg/casio4.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio Vintage Digital</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Casio G-Shock Mudmaster" data-price="$74.95" data-img="casio.npg/casio5.npg.avif" data-description="Built for the toughest conditions with mud and dust resistance. Features Twin Sensor, thermometer, compass, and exceptional shock protection.">
+        <div class="product-image">
+          <img src="casio.npg/casio5.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio G-Shock Mudmaster</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Casio Wave Ceptor" data-price="$74.95" data-img="casio.npg/casio6.npg.avif" data-description="Radio-controlled watch with atomic timekeeping for precision accuracy. Features solar power, world time, and stainless steel construction.">
+        <div class="product-image">
+          <img src="casio.npg/casio6.npg.avif" alt="Casio Digital Watch">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Casio Wave Ceptor</h3>
+          </div>
+          <div class="product-price">$74.95</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+  
+  <!-- Product Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="product-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="product-details-container">
+        <div class="product-info-container">
+          <h3 id="modalTitle"></h3>
+          <div class="product-price-container" id="modalPrice"></div>
+          <div class="product-description" id="modalDescription"></div>
+          
+          <div class="size-selection">
+            <h4>Select Model</h4>
+            <div class="size-options">
+              <div class="size-option" data-size="Standard">Standard</div>
+              <div class="size-option" data-size="Limited">Limited</div>
+            </div>
+          </div>
+          
+          <div class="quantity-selection">
+            <h4>Quantity</h4>
+            <div class="quantity-control">
+              <button id="decreaseQuantity" class="quantity-btn">-</button>
+              <input id="quantityInput" class="quantity-input" type="number" min="1" value="1" readonly>
+              <button id="increaseQuantity" class="quantity-btn">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <button id="addToBagBtn">Add to Bag</button>
+      </div>
+    </div>
+    <span class="close-btn">&times;</span>
+  </div>
+  
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+      <span class="continue-shopping">Continue Shopping</span>
+    </div>
+  </div>
+  
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+  
+</body>
+</html>

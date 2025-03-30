@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swarovski | ENE LTD</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script defer src="checkout.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #767676;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Brand Section */
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .brand-logo {
+      max-width: 240px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .brand-info {
+      color: #767676;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Product Grid */
+    .product-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: #767676;
+      font-size: 0.85rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Brand Section -->
+  <section class="brand-container">
+    <img src="Swarovski/OIP-2.jpg" alt="Swarovski Logo" class="brand-logo">
+    <h1 class="brand-title">SWAROVSKI</h1>
+    <p class="brand-info">Minimum Order QTY 48 PCS / SKU</p>
+  </section>
+  
+ 
+<!-- Product Grid -->
+<div class="product-container">
+    <div class="product-grid">
+      <div class="product-card" data-name="Swarovski Swan Necklace" data-price="$125.00" data-img="Swarovski/Swarovski1.png" data-description="This elegant Swan necklace features Swarovski's iconic emblem crafted with precision-cut crystals. The rhodium-plated chain offers adjustable length for versatile styling, making it perfect for both everyday wear and special occasions.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski1.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Swan Necklace</h3>
+          </div>
+          <div class="product-price">$125.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Angelic Bracelet" data-price="$99.00" data-img="Swarovski/Swarovski2.png" data-description="The Angelic Bracelet features a timeless tennis design with brilliant round-cut clear crystals. Set in rhodium-plated metal with a secure closure, this bracelet adds elegant sparkle to any outfit.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski2.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Angelic Bracelet</h3>
+          </div>
+          <div class="product-price">$99.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Tennis Bracelet" data-price="$149.00" data-img="Swarovski/Swarovski3.png" data-description="The classic Tennis Bracelet gets the Swarovski treatment with a continuous line of precision-cut crystals. The secure fold-over clasp ensures this dazzling piece stays in place while you shine all day or night.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski3.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Tennis Bracelet</h3>
+          </div>
+          <div class="product-price">$149.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Stud Earrings" data-price="$79.00" data-img="Swarovski/Swarovski4.png" data-description="These versatile stud earrings feature brilliant Swarovski crystals in a timeless setting. The secure post backings ensure comfortable all-day wear, while the sparkle adds elegance to any look.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski4.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Stud Earrings</h3>
+          </div>
+          <div class="product-price">$79.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Sparkling Ring" data-price="$89.00" data-img="Swarovski/Swarovski5.png" data-description="This dazzling ring features a center stone surrounded by a halo of smaller crystals. The rhodium-plated band provides durability while maintaining an elegant sparkle that catches the light from every angle.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski5.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Sparkling Ring</h3>
+          </div>
+          <div class="product-price">$89.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Iconic Swan Pendant" data-price="$109.00" data-img="Swarovski/Swarovski6.png" data-description="The Iconic Swan Pendant features Swarovski's signature motif crafted with precision-cut crystals in a pavé setting. The adjustable chain allows for versatile styling, making this piece perfect for layering or wearing alone.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski6.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Iconic Swan Pendant</h3>
+          </div>
+          <div class="product-price">$109.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Crystalline Watch" data-price="$299.00" data-img="Swarovski/Swarovski7.png" data-description="The Crystalline Watch features a bezel filled with approximately 800 sparkling Swarovski crystals. The stainless steel case and bracelet provide durability, while the precise quartz movement ensures reliable timekeeping with elegant style.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski7.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Crystalline Watch</h3>
+          </div>
+          <div class="product-price">$299.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Crystal Figure" data-price="$179.00" data-img="Swarovski/Swarovski8.png" data-description="This meticulously crafted crystal figure showcases Swarovski's legendary precision cutting and polishing techniques. Created with hundreds of facets that reflect light in spectacular ways, it makes a perfect collectible or elegant home accent.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski8.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Crystal Figure</h3>
+          </div>
+          <div class="product-price">$179.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Remix Collection" data-price="$89.00" data-img="Swarovski/Swarovski9.png" data-description="The innovative Remix Collection features versatile strands with magnetic closures that can be worn as bracelets, necklaces, or anklets. Mix and match different strands to create your own unique combination of Swarovski sparkle.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski9.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Remix Collection</h3>
+          </div>
+          <div class="product-price">$89.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Infinity Bangle" data-price="$119.00" data-img="Swarovski/Swarovski10.png" data-description="The Infinity Bangle features Swarovski's interpretation of the infinity symbol adorned with sparkling crystals. The open design allows for easy wear, while the rhodium plating ensures lasting brilliance.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski10.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Infinity Bangle</h3>
+          </div>
+          <div class="product-price">$119.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Bella Earrings" data-price="$69.00" data-img="Swarovski/Swarovski11.png" data-description="The Bella Earrings feature a classic drop design with a brilliant round crystal stone. The rhodium-plated setting enhances the sparkle, while the secure post backs ensure comfortable wear throughout the day.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski11.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Bella Earrings</h3>
+          </div>
+          <div class="product-price">$69.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Crystal Pen" data-price="$59.00" data-img="Swarovski/Swarovski12.png" data-description="This elegant writing instrument features Swarovski crystals embedded in a premium metal barrel. The smooth ballpoint mechanism ensures comfortable writing, while the crystal accents add a touch of luxury to your everyday essentials.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski12.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Crystal Pen</h3>
+          </div>
+          <div class="product-price">$59.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Swarovski Sparkling Dance Set" data-price="$189.00" data-img="Swarovski/Swarovski13.png" data-description="This matching set features necklace and earrings with Swarovski's unique 'dancing crystal' design, where center stones appear to float and move with your every gesture. The perfect coordinated set for special occasions.">
+        <div class="product-image">
+          <img src="Swarovski/Swarovski13.png" alt="Swarovski Crystal">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Swarovski Sparkling Dance Set</h3>
+          </div>
+          <div class="product-price">$189.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+  
+  <!-- Product Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="product-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="product-details-container">
+        <div class="product-info-container">
+          <h3 id="modalTitle"></h3>
+          <div class="product-price-container" id="modalPrice"></div>
+          <div class="product-description" id="modalDescription"></div>
+          
+          <div class="size-selection">
+            <h4>Select Finish</h4>
+            <div class="size-options">
+              <div class="size-option" data-size="Rhodium">Rhodium</div>
+              <div class="size-option" data-size="Rose Gold">Rose Gold</div>
+              <div class="size-option" data-size="Gold Tone">Gold Tone</div>
+            </div>
+          </div>
+          
+          <div class="quantity-selection">
+            <h4>Quantity</h4>
+            <div class="quantity-control">
+              <button id="decreaseQuantity" class="quantity-btn">-</button>
+              <input id="quantityInput" class="quantity-input" type="number" min="1" value="1" readonly>
+              <button id="increaseQuantity" class="quantity-btn">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <button id="addToBagBtn">Add to Bag</button>
+      </div>
+    </div>
+    <span class="close-btn">&times;</span>
+  </div>
+  
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+      <span class="continue-shopping">Continue Shopping</span>
+    </div>
+  </div>
+  
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+
+
+  
+</body>
+</html>

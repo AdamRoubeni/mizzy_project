@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marc Jacobs | ENE LTD</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script defer src="checkout.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #767676;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Brand Section */
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .brand-logo {
+      max-width: 240px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .brand-info {
+      color: #767676;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Product Grid */
+    .product-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: #767676;
+      font-size: 0.85rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Brand Section -->
+  <section class="brand-container">
+    <img src="marcjacobs.npg/Marc-Jacobs-embleme.jpg" alt="Marc Jacobs Logo" class="brand-logo">
+    <h1 class="brand-title">MARC JACOBS</h1>
+    <p class="brand-info">Minimum Order QTY 48 PCS / SKU</p>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Product Grid -->
+<div class="product-container">
+    <div class="product-grid">
+      <div class="product-card" data-name="Marc Jacobs Signature Bag" data-price="$325.00" data-img="marcjacobs.npg/marcjacobs1.npg.webp" data-description="The iconic Marc Jacobs Signature Bag features premium pebbled leather, distinctive hardware detailing, and the brand's signature closure. Versatile for both everyday use and special occasions.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs1.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Signature Bag</h3>
+          </div>
+          <div class="product-price">$325.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Tote Bag" data-price="$295.00" data-img="marcjacobs.npg/marcjacobs2.npg.webp" data-description="Spacious and stylish, the Marc Jacobs Tote Bag offers ample room for your essentials. Crafted from durable materials with reinforced handles and the designer's iconic branding.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs2.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Tote Bag</h3>
+          </div>
+          <div class="product-price">$295.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Snapshot" data-price="$350.00" data-img="marcjacobs.npg/marcjacobs3.npg.webp" data-description="The bestselling Snapshot bag features a compact, structured design with dual compartments and the signature double-J logo. Includes an adjustable crossbody strap and multiple color combinations.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs3.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Snapshot</h3>
+          </div>
+          <div class="product-price">$350.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Crossbody" data-price="$275.00" data-img="marcjacobs.npg/marcjacobs4.npg.webp" data-description="Effortlessly transition from day to night with this versatile crossbody bag. Features an adjustable strap, secure closures, and just enough room for your daily essentials.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs4.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Crossbody</h3>
+          </div>
+          <div class="product-price">$275.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Clutch" data-price="$225.00" data-img="marcjacobs.npg/marcjacobs5.npg.webp" data-description="This elegant clutch is the perfect evening companion. With its sleek design, premium materials, and subtle branding, it makes a sophisticated statement while holding your nighttime essentials.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs5.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Clutch</h3>
+          </div>
+          <div class="product-price">$225.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Mini Bag" data-price="$195.00" data-img="marcjacobs.npg/marcjacobs6.npg.webp" data-description="Compact yet stylish, this mini bag proves that good things come in small packages. Perfect for those who prefer to travel light without sacrificing style or organization.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs6.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Mini Bag</h3>
+          </div>
+          <div class="product-price">$195.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Backpack" data-price="$375.00" data-img="marcjacobs.npg/marcjacobs7.npg.webp" data-description="Combining fashion with function, this premium backpack offers comfort, durability, and unmistakable style. Multiple compartments keep your belongings organized while making a fashion statement.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs7.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Backpack</h3>
+          </div>
+          <div class="product-price">$375.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Wallet" data-price="$150.00" data-img="marcjacobs.npg/marcjacobs8.npg.webp" data-description="This designer wallet combines elegance with practicality. Features multiple card slots, bill compartments, and secure closures, all wrapped in premium materials with signature Marc Jacobs details.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs8.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Wallet</h3>
+          </div>
+          <div class="product-price">$150.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Marc Jacobs Shoulder Bag" data-price="$295.00" data-img="marcjacobs.npg/marcjacobs9.npg.webp" data-description="This shoulder bag strikes the perfect balance between casual and sophisticated. The adjustable strap offers versatile carrying options while the spacious interior accommodates all your essentials.">
+        <div class="product-image">
+          <img src="marcjacobs.npg/marcjacobs9.npg.webp" alt="Marc Jacobs Product">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Marc Jacobs Shoulder Bag</h3>
+          </div>
+          <div class="product-price">$295.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+  
+  <!-- Product Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="product-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="product-details-container">
+        <div class="product-info-container">
+          <h3 id="modalTitle"></h3>
+          <div class="product-price-container" id="modalPrice"></div>
+          <div class="product-description" id="modalDescription"></div>
+          
+          <div class="size-selection">
+            <h4>Select Color</h4>
+            <div class="size-options">
+              <div class="size-option" data-size="Black">Black</div>
+              <div class="size-option" data-size="Tan">Tan</div>
+              <div class="size-option" data-size="Navy">Navy</div>
+            </div>
+          </div>
+          
+          <div class="quantity-selection">
+            <h4>Quantity</h4>
+            <div class="quantity-control">
+              <button id="decreaseQuantity" class="quantity-btn">-</button>
+              <input id="quantityInput" class="quantity-input" type="number" min="1" value="1" readonly>
+              <button id="increaseQuantity" class="quantity-btn">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <button id="addToBagBtn">Add to Bag</button>
+      </div>
+    </div>
+    <span class="close-btn">&times;</span>
+  </div>
+  
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+      <span class="continue-shopping">Continue Shopping</span>
+    </div>
+  </div>
+  
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pandora | ENE LTD</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script defer src="checkout.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #767676;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Brand Section */
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .brand-logo {
+      max-width: 240px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .brand-info {
+      color: #767676;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Product Grid */
+    .product-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: #767676;
+      font-size: 0.85rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Brand Section -->
+  <section class="brand-container">
+    <img src="pandora/OIP-1.jpg" alt="Pandora Logo" class="brand-logo">
+    <h1 class="brand-title">PANDORA</h1>
+    <p class="brand-info">Minimum Order QTY 48 PCS / SKU</p>
+  </section>
+  
+  
+
+
+<!-- Product Grid -->
+<div class="product-container">
+    <div class="product-grid">
+      <div class="product-card" data-name="Pandora Charm Bracelet" data-price="$85.00" data-img="pandora/pandora1.png" data-description="The classic Pandora Moments Snake Chain Bracelet in sterling silver. This iconic bracelet serves as the perfect canvas for your personal collection of charms, allowing you to create a piece that tells your unique story.">
+        <div class="product-image">
+          <img src="pandora/pandora1.png" alt="Pandora Charm">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Charm Bracelet</h3>
+          </div>
+          <div class="product-price">$85.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Pandora Signature Ring" data-price="$65.00" data-img="pandora/pandora2.png" data-description="The Pandora Signature Ring features the iconic logo in elegant sterling silver. This versatile piece can be worn alone for a subtle look or stacked with other rings for a more personalized style statement.">
+        <div class="product-image">
+          <img src="pandora/pandora2.png" alt="Pandora Ring">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Signature Ring</h3>
+          </div>
+          <div class="product-price">$65.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Pandora Pendant Necklace" data-price="$75.00" data-img="pandora/pandora3.png" data-description="This elegant pendant necklace features a delicate sterling silver chain with a beautiful charm centerpiece. The adjustable length allows for versatile styling, making it perfect for both everyday wear and special occasions.">
+        <div class="product-image">
+          <img src="pandora/pandora3.png" alt="Pandora Necklace">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Pendant Necklace</h3>
+          </div>
+          <div class="product-price">$75.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Pandora Stud Earrings" data-price="$55.00" data-img="pandora/pandora4.png" data-description="These classic stud earrings combine timeless design with Pandora's signature craftsmanship. Crafted from sterling silver, they feature secure butterfly backs and are perfect for everyday elegance.">
+        <div class="product-image">
+          <img src="pandora/pandora4.png" alt="Pandora Earrings">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Stud Earrings</h3>
+          </div>
+          <div class="product-price">$55.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Pandora Moments Bangle" data-price="$95.00" data-img="pandora/pandora5.png" data-description="The Pandora Moments Bangle features a sleek, modern design with an easy-to-open hinge mechanism. Made from sterling silver, this bangle can be worn on its own or adorned with your favorite Pandora charms.">
+        <div class="product-image">
+          <img src="pandora/pandora5.png" alt="Pandora Bangle">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Moments Bangle</h3>
+          </div>
+          <div class="product-price">$95.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Pandora Heart Charm" data-price="$45.00" data-img="pandora/pandora6.png" data-description="Express your love with this sterling silver heart charm. Featuring intricate detailing and the Pandora logo, this charm is compatible with all Pandora bracelets and bangles, allowing you to customize your jewelry.">
+        <div class="product-image">
+          <img src="pandora/pandora6.png" alt="Pandora Charm">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Pandora Heart Charm</h3>
+          </div>
+          <div class="product-price">$45.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+  
+  <!-- Product Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="product-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="product-details-container">
+        <div class="product-info-container">
+          <h3 id="modalTitle"></h3>
+          <div class="product-price-container" id="modalPrice"></div>
+          <div class="product-description" id="modalDescription"></div>
+          
+          <div class="size-selection">
+            <h4>Select Material</h4>
+            <div class="size-options">
+              <div class="size-option" data-size="Sterling Silver">Sterling Silver</div>
+              <div class="size-option" data-size="Rose Gold">Rose Gold</div>
+              <div class="size-option" data-size="Gold">Gold</div>
+            </div>
+          </div>
+          
+          <div class="quantity-selection">
+            <h4>Quantity</h4>
+            <div class="quantity-control">
+              <button id="decreaseQuantity" class="quantity-btn">-</button>
+              <input id="quantityInput" class="quantity-input" type="number" min="1" value="1" readonly>
+              <button id="increaseQuantity" class="quantity-btn">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <button id="addToBagBtn">Add to Bag</button>
+      </div>
+    </div>
+    <span class="close-btn">&times;</span>
+  </div>
+  
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+      <span class="continue-shopping">Continue Shopping</span>
+    </div>
+  </div>
+  
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+
+
+
+
+
+
+  
+</body>
+</html>
