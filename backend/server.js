@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const app = express();
 app.use(
   cors({
-    origin: ["https://eneltd.netlify.app/"],
+    origin: ["https://eneltd.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     preflightContinue: false,
