@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seiko | ENE LTD</title>
+  <link rel="stylesheet" href="checkout.css">
+  <script defer src="checkout.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #767676;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Brand Section */
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .brand-logo {
+      width: 200px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .brand-info {
+      color: #767676;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Product Grid */
+    .product-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: #767676;
+      font-size: 0.85rem;
+    }
+    
+    /* Modal and Cart Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal.hidden {
+      display: none;
+    }
+    
+    .modal:not(.hidden) {
+      display: flex;
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 1000px;
+      max-height: 90vh;
+      overflow: auto;
+      display: flex;
+      position: relative;
+    }
+    
+    .product-image-container {
+      flex: 1;
+      padding: 2rem;
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .product-image-container img {
+      max-width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+    
+    .product-details-container {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-info-container {
+      flex-grow: 1;
+    }
+    
+    .product-info-container h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .product-price-container {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-description {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    
+    .size-selection, .quantity-selection {
+      margin-bottom: 1.5rem;
+    }
+    
+    .size-selection h4, .quantity-selection h4 {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .size-option {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .size-option:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .size-option.selected {
+      border-color: #111;
+      background-color: #111;
+      color: #fff;
+    }
+    
+    .quantity-control {
+      display: flex;
+      align-items: center;
+    }
+    
+    .quantity-btn {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      background-color: #f8f8f8;
+      cursor: pointer;
+    }
+    
+    .quantity-input {
+      width: 3rem;
+      height: 2rem;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-left: none;
+      border-right: none;
+    }
+    
+    #addToBagBtn {
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    #addToBagBtn:hover {
+      background-color: #333;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      z-index: 10;
+    }
+    
+    /* Cart Panel */
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cart-panel.hidden {
+      transform: translateX(100%);
+    }
+    
+    .cart-panel:not(.hidden) {
+      transform: translateX(0);
+    }
+    
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .cart-header h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .cart-close {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    #cartItems {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    
+    .cart-item {
+      display: flex;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+    
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      margin-right: 1rem;
+    }
+    
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    
+    .cart-item-details {
+      flex-grow: 1;
+    }
+    
+    .cart-item-details h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .cart-item-details p {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.25rem;
+    }
+    
+    .cart-item-price {
+      font-weight: 600;
+      color: #111 !important;
+    }
+    
+    .cart-item-remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #999;
+    }
+    
+    .cart-summary {
+      padding: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+    
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    #checkoutBtn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    
+    .continue-shopping {
+      display: block;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      cursor: pointer;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .modal-content {
+        flex-direction: column;
+      }
+      
+      .product-image-container,
+      .product-details-container {
+        padding: 1rem;
+      }
+      
+      .cart-panel {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">ENE LTD</div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="nav-links">
+      <a href="shop.html">Shop Brands</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Brand Section -->
+  <section class="brand-container">
+    <img src="top_brand_images/Seiko-Logo.png" alt="Seiko Logo" class="brand-logo">
+    <h1 class="brand-title">SEIKO</h1>
+    <p class="brand-info">Minimum Order QTY 12 PCS / SKU</p>
+  </section>
+  
+  <!-- Product Grid -->
+  <div class="product-container">
+    <div class="product-grid">
+      <div class="product-card" data-name="Seiko Prospex Automatic Diver" data-price="$495.00" data-img="seiko/seiko1.png" data-description="The Seiko Prospex Automatic Diver watch features a robust stainless steel case with 200m water resistance, unidirectional rotating bezel, and luminous hands and markers. Powered by Seiko's reliable automatic movement, this professional dive watch offers exceptional durability and precision.">
+        <div class="product-image">
+          <img src="seiko/seiko1.png" alt="Seiko Prospex Automatic Diver">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Prospex Automatic Diver</h3>
+          </div>
+          <div class="product-price">$475.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Seiko Presage Cocktail Time" data-price="$425.00" data-img="seiko/seiko2.png" data-description="The Seiko Presage Cocktail Time watch features an exquisite textured dial inspired by cocktail making, housed in a sophisticated stainless steel case. This elegant timepiece combines Japanese craftsmanship with automatic movement reliability, and includes a date display and exhibition caseback.">
+        <div class="product-image">
+          <img src="seiko/seiko2.png" alt="Seiko Presage Cocktail Time">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Presage Cocktail Time</h3>
+          </div>
+          <div class="product-price">$475.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Seiko 5 Sports Automatic" data-price="$275.00" data-img="seiko/seiko3.png" data-description="The Seiko 5 Sports Automatic watch offers a perfect blend of performance and style with its stainless steel construction and day-date display. Featuring Seiko's reliable automatic movement, this versatile timepiece delivers excellent value with 100m water resistance and a heritage-inspired design.">
+        <div class="product-image">
+          <img src="seiko/seiko3.png" alt="Seiko 5 Sports Automatic">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>5 Sports Automatic</h3>
+          </div>
+          <div class="product-price">$475.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Seiko Solar Chronograph" data-price="$350.00" data-img="seiko/seiko4.png" data-description="The Seiko Solar Chronograph harnesses light energy to power its multiple functions, eliminating the need for battery changes. With chronograph timing capabilities, date display, and 100m water resistance, this sustainable timepiece delivers precision and practical functionality in a stylish stainless steel case.">
+        <div class="product-image">
+          <img src="seiko/seiko4.png" alt="Seiko Solar Chronograph">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Solar Chronograph</h3>
+          </div>
+          <div class="product-price">$475.00</div>
+        </div>
+      </div>
+      
+      <div class="product-card" data-name="Seiko Astron GPS Solar" data-price="$1,850.00" data-img="seiko/seiko5.png" data-description="The revolutionary Seiko Astron GPS Solar connects to the GPS network to automatically adjust to your time zone anywhere in the world. Powered by light and requiring no battery changes, this premium timepiece features a titanium case, sapphire crystal, and perpetual calendar accurate until February 2100.">
+        <div class="product-image">
+          <img src="seiko/seiko5.png" alt="Seiko Astron GPS Solar">
+        </div>
+        <div class="product-details">
+          <div class="product-info">
+            <h3>Astron GPS Solar</h3>
+          </div>
+          <div class="product-price">475.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ENE LTD — All goods are authentic, new, unused & in original brand packaging.</p>
+  </footer>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="product-image-container">
+        <img id="modalImage" src="" alt="Product">
+      </div>
+      <div class="product-details-container">
+        <div class="product-info-container">
+          <h3 id="modalTitle"></h3>
+          <div class="product-price-container" id="modalPrice"></div>
+          <div class="product-description" id="modalDescription"></div>
+          
+          <div class="size-selection">
+            <h4>Select Option</h4>
+            <div class="size-options">
+              <div class="size-option" data-size="Stainless Steel">Stainless Steel</div>
+              <div class="size-option" data-size="Black PVD">Black PVD</div>
+              <div class="size-option" data-size="Two-Tone">Two-Tone</div>
+            </div>
+          </div>
+          
+          <div class="quantity-selection">
+            <h4>Quantity</h4>
+            <div class="quantity-control">
+              <button id="decreaseQuantity" class="quantity-btn">-</button>
+              <input id="quantityInput" class="quantity-input" type="number" min="1" value="1" readonly>
+              <button id="increaseQuantity" class="quantity-btn">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <button id="addToBagBtn">Add to Bag</button>
+      </div>
+    </div>
+    <span class="close-btn">&times;</span>
+  </div>
+
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn">Checkout</button>
+      <span class="continue-shopping">Continue Shopping</span>
+    </div>
+  </div>
+
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

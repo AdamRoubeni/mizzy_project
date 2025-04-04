@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ENE LTD | Premium Luxury Marketplace</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
@@ -198,78 +200,20 @@
     }
     
     /* Login Modal Styles */
-    .login-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      z-index: 1100;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .login-modal.active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-    }
-    
-    .login-content {
-      background-color: white;
+
+    #loginModal .modal-dialog {
+      margin: 0 auto;
       width: 100%;
       max-width: 400px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-lg);
-      padding: 2.5rem;
-      position: relative;
-      transform: translateY(-20px);
-      transition: transform 0.3s ease;
-      z-index: 1101; /* Ensure it's above the modal background */
     }
     
-    .login-modal.active .login-content {
-      transform: translateY(0);
+    #loginModal .modal-content {
+      border-radius: 0 0 0.375rem 0.375rem;
+      border-top: none;
     }
     
-    .close-login {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: var(--text-dark);
-      transition: var(--transition);
-      z-index: 1102; /* Ensure it's above everything */
-    }
-    
-    .close-login:hover {
-      color: var(--accent-color);
-    }
-    
-    .login-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-    
-    .login-content h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 2px;
-      background-color: var(--accent-color);
+    .logged-in-state {
+      display: none;
     }
     
     .form-group {
@@ -1253,6 +1197,66 @@
         padding: 2rem 1.5rem;
       }
     }
+    .login-content {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .cart-count {
+      font-size: 0.7rem;
+    }
+  </style>
+   <style>
+    /* Custom styles to fix modal issues */
+    .login-modal-custom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      /* height: 100%;
+      display: flex; */
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 1060;
+      padding-top: 20px;
+      background-color: rgba(0,0,0,0.5); /* Add semi-transparent backdrop */
+
+    }
+    
+    .login-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    /* Hide the default Bootstrap backdrop */
+    .modal-backdrop {
+      display: none !important;
+    }
+    
+    /* Nav icons styling */
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+      padding: 10px;
+    }
+    
+    .login-icon, .cart-icon {
+      cursor: pointer;
+    }
+    
+    .cart-count {
+      font-size: 0.7rem;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 5px;
+      position: relative;
+      top: -8px;
+      left: -5px;
+    }
   </style>
 </head>
 <body>
@@ -1263,20 +1267,21 @@
     <nav class="nav-links">
       <span class="close-menu"><i class="fas fa-times"></i></span>
       <a href="shop.html" class="nav-btn primary">Shop Brands</a>
-      <a href="categories.html" class="nav-btn secondary">Categories</a>
+      <!-- Categories button removed -->
       <a href="about.html" class="nav-btn secondary">About</a>
       <a href="contact.html" class="nav-btn secondary">Contact</a>
     </nav>
-    <div class="nav-icons">
+    
+    <!-- <div class="nav-icons">
       <span class="login-icon"><i class="fas fa-user"></i></span>
       <span class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count">0</span>
       </span>
-    </div>
+    </div> -->
     
     <!-- Login Modal -->
-    <div class="login-modal">
+    <!-- <div class="login-modal">
       <div class="login-content">
         <span class="close-login"><i class="fas fa-times"></i></span>
         <h2>Login</h2>
@@ -1302,7 +1307,48 @@
           <p>Don't have an account? <a href="#">Register</a></p>
         </div>
       </div>
+    </div> -->
+
+<!-- Navigation Icons -->
+<div class="nav-icons">
+  <span class="login-icon"><i class="fas fa-user"></i></span>
+  <span class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+  </span>
+</div>
+
+<!-- Login Modal (Custom Implementation) -->
+<div class="login-modal-custom" id="loginModal" style="display: none;">
+  <div class="login-content">
+    <span class="close-login" style="float: right; cursor: pointer;">
+      <i class="fas fa-times"></i>
+    </span>
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-group mb-3">
+        <label for="email">Username or Email</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your username or email" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <div class="form-footer d-flex justify-content-between align-items-center mb-3">
+        <div class="remember-me form-check">
+          <input class="form-check-input" type="checkbox" id="remember" name="remember">
+          <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn btn btn-primary w-100">LOGIN</button>
+    </form>
+    <div class="register-link text-center mt-3">
+      <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none">Register</a></p>
     </div>
+  </div>
+</div>
+
   </header>
 
   <!-- Hero Section -->
@@ -1360,70 +1406,70 @@
       <img src="top_brand_images/ladies_apparel.jpg" alt="Ladies Apparel">
       <div class="category-overlay">
         <h3>LADIES APPAREL</h3>
-        <a href="category-ladies.html" class="category-btn">Explore</a>
+        <a href="category-ladies.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/handbags.jpg" alt="Handbags">
       <div class="category-overlay">
         <h3>HANDBAGS & SLG'S</h3>
-        <a href="category-handbags.html" class="category-btn">Explore</a>
+        <a href="category-handbags.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/mens_apparel.jpg" alt="Mens Apparel">
       <div class="category-overlay">
         <h3>MENS APPAREL</h3>
-        <a href="category-mens.html" class="category-btn">Explore</a>
+        <a href="category-mens.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/accessories.jpg" alt="Fashion Accessories">
       <div class="category-overlay">
         <h3>FASHION ACCESSORIES</h3>
-        <a href="category-accessories.html" class="category-btn">Explore</a>
+        <a href="category-accessories.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/eyewear.jpg" alt="Eyewear">
       <div class="category-overlay">
         <h3>EYEWEAR</h3>
-        <a href="category-eyewear.html" class="category-btn">Explore</a>
+        <a href="category-eyewear.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/footwear.jpg" alt="Footwear">
       <div class="category-overlay">
         <h3>FOOTWEAR</h3>
-        <a href="category-footwear.html" class="category-btn">Explore</a>
+        <a href="category-footwear.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
-      <img src="/api/placeholder/400/320" alt="Kitchenware">
+      <img src="top_brand_images/kitchenwear.jpg" alt="Kitchenware">
       <div class="category-overlay">
         <h3>KITCHENWARE</h3>
-        <a href="category-kitchenware.html" class="category-btn">Explore</a>
+        <a href="category-kitchenware.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
-      <img src="/api/placeholder/400/320" alt="Watches">
+      <img src="top_brand_images/watches.jpg" alt="Watches">
       <div class="category-overlay">
         <h3>WATCHES</h3>
-        <a href="category-watches.html" class="category-btn">Explore</a>
+        <a href="category-watches.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
-      <img src="/api/placeholder/400/320" alt="Toys">
+      <img src="top_brand_images/toys.jpg" alt="Toys">
       <div class="category-overlay">
         <h3>TOYS</h3>
-        <a href="category-toys.html" class="category-btn">Explore</a>
+        <a href="category-toys.html" class="category-btn"></a>
       </div>
     </div>
     <div class="category-card reveal">
-      <img src="/api/placeholder/400/320" alt="Electronics">
+      <img src="top_brand_images/eletronics.jpg" alt="Electronics">
       <div class="category-overlay">
         <h3>ELECTRONICS</h3>
-        <a href="category-electronics.html" class="category-btn">Explore</a>
+        <a href="category-electronics.html" class="category-btn"></a>
       </div>
     </div>
   </section>
@@ -1573,7 +1619,108 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
+  <!-- My code starts -->
+  <!-- Include Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+  // Get elements
+  const loginModal = document.getElementById('loginModal');
+  const loginIcon = document.querySelector('.login-icon');
+  const closeBtn = document.querySelector('.close-login');
+  const loginForm = document.getElementById('login-form');
+  const registerLink = document.querySelector('.register-link a');
+  const userIcon = document.querySelector('.login-icon i');
+
+  
+
+  // Show modal when login icon is clicked
+  loginIcon.addEventListener('click', function() {
+    // Check if already logged in
+    if (userIcon.classList.contains('logged-in')) {
+      if (confirm('Would you like to logout?')) {
+        userIcon.classList.remove('logged-in', 'fa-user-check');
+        userIcon.classList.add('fa-user');
+        localStorage.removeItem('fakeLoggedIn');
+      }
+      return;
+    }
+    loginModal.style.display = 'flex';
+  });
+
+  // Close modal when X is clicked
+  closeBtn.addEventListener('click', function() {
+    loginModal.style.display = 'none';
+  });
+
+  // Close modal when clicking outside content (on backdrop)
+  loginModal.addEventListener('click', function(e) {
+    if (e.target === loginModal) {
+      loginModal.style.display = 'none';
+    }
+  });
+
+  // Close modal when register link is clicked
+  registerLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    loginModal.style.display = 'none';
+  });
+
+  // Handle form submission (fake login)
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const rememberMe = document.getElementById('remember').checked;
+    
+    // Fake validation - any non-empty input works
+    if (email.trim() && password.trim()) {
+      // Show loading state
+      const submitBtn = loginForm.querySelector('button');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Logging in...';
+      
+      // Fake authentication delay
+      setTimeout(() => {
+        // Update UI to show logged in state
+        userIcon.classList.remove('fa-user');
+        userIcon.classList.add('fa-user-check', 'logged-in');
+        
+        // Store login state if "Remember me" is checked
+        if (rememberMe) {
+          localStorage.setItem('fakeLoggedIn', 'true');
+        }
+        
+        // Close modal and reset form
+        loginModal.style.display = 'none';
+        loginForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'LOGIN';
+        
+        // Show welcome message
+        alert(`Welcome! (LoggedIn)`);
+      }, 1000);
+    } else {
+      alert('Please enter both username and password');
+    }
+  });
+
+  // Check for remembered login on page load
+  if (localStorage.getItem('fakeLoggedIn')) {
+    userIcon.classList.remove('fa-user');
+    userIcon.classList.add('fa-user-check', 'logged-in');
+  }
+});
+</script>
+  <!-- My code ends -->
+  <script>
+
+
+
     document.addEventListener('DOMContentLoaded', function() {
       // Check if user is already logged in
       const isLoggedIn = localStorage.getItem('eneUserIsLoggedIn') === 'true';
@@ -1952,7 +2099,10 @@ loginForm.addEventListener('submit', function(e) {
     });
 
 
-    
+    window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+});
+
   </script>
 
 
