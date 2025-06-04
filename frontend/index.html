@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ENE LTD | Premium Luxury Marketplace</title>
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>ENE LTD | B2B Premium Luxury Marketplace</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
-    /* Modern luxury e-commerce styling */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
     
     :root {
-      --primary-color: #0f0f0f;
-      --secondary-color: #f9f9f9;
-      --accent-color: #d4af37; /* Gold accent */
-      --accent-hover: #b8971f;
+      --primary-color: #0a0b1e;
+      --secondary-color: #1a1d3a;
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
       --text-light: #ffffff;
-      --text-dark: #0a0a0a;
-      --text-gray: #777;
-      --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
-      --shadow-md: 0 8px 24px rgba(0,0,0,0.09);
-      --shadow-lg: 0 15px 35px rgba(0,0,0,0.12);
-      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      --border-radius: 8px;
+      --text-dark: #0f172a;
+      --text-primary: #1e293b;
+      --text-gray: #64748b;
+      --text-muted: #94a3b8;
+      --background: #ffffff;
+      --background-alt: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --border-light: #f1f5f9;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-hero: linear-gradient(135deg, rgba(10, 11, 30, 0.95) 0%, rgba(99, 102, 241, 0.9) 100%);
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 12px;
     }
     
     * {
@@ -34,11 +46,11 @@
     }
     
     body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-primary);
       line-height: 1.7;
       overflow-x: hidden;
-      background-color: var(--secondary-color);
+      background: var(--background);
     }
     
     a {
@@ -55,7 +67,7 @@
     
     .container {
       width: 92%;
-      max-width: 1600px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -77,143 +89,205 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 5%;
-      background-color: rgba(255, 255, 255, 0.98);
+      padding: 1rem 5%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
       transition: var(--transition);
     }
     
     .navbar.scrolled {
       padding: 0.8rem 5%;
-      background-color: rgba(255, 255, 255, 0.98);
-      box-shadow: var(--shadow-md);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-lg);
     }
     
     .logo {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       letter-spacing: 1px;
       position: relative;
-    }
-    
-    .logo span {
-      color: var(--accent-color);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .logo::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: -3px;
       left: 0;
-      width: 30px;
+      width: 40px;
       height: 2px;
-      background-color: var(--accent-color);
+      background: var(--gradient-primary);
+      border-radius: 2px;
     }
     
     .menu-toggle {
       display: none;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       cursor: pointer;
-      color: var(--text-dark);
+      color: var(--text-primary);
       transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 8px;
+      background: var(--background-alt);
+      border: 1px solid var(--border-color);
     }
     
     .menu-toggle:hover {
       color: var(--accent-color);
+      background: var(--card-bg);
+      border-color: var(--accent-color);
     }
     
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 0.5rem;
       align-items: center;
     }
     
     .nav-btn {
       text-decoration: none;
-      padding: 0.7rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border-radius: var(--border-radius);
       font-weight: 500;
       letter-spacing: 0.5px;
       transition: var(--transition);
-      font-size: 0.95rem;
-      text-transform: uppercase;
+      font-size: 0.9rem;
       position: relative;
       overflow: hidden;
     }
     
-    .nav-btn.primary {
-      background-color: var(--primary-color);
-      color: var(--text-light);
-      box-shadow: var(--shadow-sm);
+    .nav-btn:hover {
+      transform: translateY(-2px);
     }
     
-    .nav-btn.primary:hover {
-      background-color: #222;
-      transform: translateY(-3px);
+    .nav-btn.primary {
+      background: var(--gradient-primary);
+      color: var(--text-light);
       box-shadow: var(--shadow-md);
     }
     
+    .nav-btn.primary:hover {
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+    }
+    
     .nav-btn.secondary {
-      background-color: transparent;
-      color: var(--primary-color);
-      border: 1px solid rgba(0,0,0,0.08);
+      background: transparent;
+      color: var(--text-gray);
+      border: 1px solid var(--border-color);
     }
     
     .nav-btn.secondary:hover {
       border-color: var(--accent-color);
-      transform: translateY(-3px);
-      color: var(--accent-color);
+      color: var(--text-primary);
+      background: rgba(99, 102, 241, 0.05);
     }
 
-    .nav-btn::after {
+    .nav-btn::before {
       content: '';
       position: absolute;
-      width: 100%;
-      height: 100%;
       top: 0;
       left: -100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+      transition: left 0.5s;
     }
 
-    .nav-btn:hover::after {
+    .nav-btn:hover::before {
       left: 100%;
     }
     
-    .login-icon {
-      font-size: 1.2rem;
+    .nav-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .nav-icon {
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0.6rem;
+      border-radius: 8px;
+      background: var(--background-alt);
+      border: 1px solid var(--border-color);
+      color: var(--text-gray);
+    }
+    
+    .nav-icon:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      background: var(--card-bg);
+      border-color: var(--accent-color);
+    }
+
+    /* Login Modal */
+    .login-modal-custom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .login-modal-custom.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .login-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-xl);
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      color: var(--text-primary);
+    }
+
+    .login-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .close-login {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: var(--text-gray);
       cursor: pointer;
       transition: var(--transition);
     }
-    
-    .login-icon:hover {
-      color: var(--accent-color);
-      transform: scale(1.1);
-    }
-    
-    /* Login Modal Styles */
 
-    #loginModal .modal-dialog {
-      margin: 0 auto;
-      width: 100%;
-      max-width: 400px;
-    }
-    
-    #loginModal .modal-content {
-      border-radius: 0 0 0.375rem 0.375rem;
-      border-top: none;
-    }
-    
-    .logged-in-state {
-      display: none;
+    .close-login:hover {
+      color: var(--text-primary);
     }
     
     .form-group {
@@ -224,22 +298,24 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
-      color: var(--text-dark);
+      color: var(--text-primary);
     }
     
     .form-group input {
       width: 100%;
       padding: 0.8rem 1rem;
-      border: 1px solid #ddd;
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
       outline: none;
       transition: var(--transition);
-      font-size: 16px; /* Better for mobile input */
+      font-size: 16px;
+      background: var(--background);
+      color: var(--text-primary);
     }
     
     .form-group input:focus {
       border-color: var(--accent-color);
-      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
     
     .form-footer {
@@ -253,6 +329,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      color: var(--text-gray);
     }
     
     .forgot-password {
@@ -267,95 +344,30 @@
     .login-btn {
       width: 100%;
       padding: 1rem;
-      background-color: var(--accent-color);
-      color: var(--text-dark);
+      background: var(--gradient-primary);
+      color: var(--text-light);
       border: none;
       border-radius: var(--border-radius);
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
       font-size: 1rem;
-      position: relative;
-      overflow: hidden;
     }
     
     .login-btn:hover {
-      background-color: var(--accent-hover);
       transform: translateY(-2px);
-    }
-    
-    .login-btn:active {
-      transform: translateY(0);
-    }
-    
-    .login-btn::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.5s;
-    }
-    
-    .login-btn:hover::after {
-      left: 100%;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
     }
     
     .register-link {
       margin-top: 1.5rem;
       text-align: center;
       font-size: 0.9rem;
+      color: var(--text-gray);
     }
     
     .register-link a {
       color: var(--accent-color);
-      font-weight: 600;
-    }
-    
-    .login-error {
-      color: #ff4136;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      text-align: center;
-      padding: 0.5rem;
-      background-color: rgba(255, 65, 54, 0.1);
-      border-radius: var(--border-radius);
-      animation: shake 0.5s ease-in-out;
-    }
-    
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-5px); }
-      40%, 80% { transform: translateX(5px); }
-    }
-
-    .cart-icon {
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: var(--transition);
-      position: relative;
-    }
-    
-    .cart-icon:hover {
-      color: var(--accent-color);
-      transform: scale(1.1);
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background-color: var(--accent-color);
-      color: white;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      font-size: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-weight: 600;
     }
     
@@ -366,30 +378,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 0;
       overflow: hidden;
+      background: var(--gradient-hero);
+      color: var(--text-light);
     }
     
-    .hero.full-banner {
-      width: 100%;
-    }
-    
-    .hero-video-container {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
-    
-    .hero-video-bg {
+    .hero::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      filter: brightness(0.6);
+      background: url('top_brand_images/hero_main.jpg') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
     }
     
     .hero-overlay {
@@ -398,7 +401,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+      background: linear-gradient(135deg, rgba(10, 11, 30, 0.8), rgba(99, 102, 241, 0.6));
       z-index: 0;
     }
     
@@ -407,65 +410,50 @@
       color: var(--text-light);
       z-index: 1;
       max-width: 900px;
-      padding: 0 1rem;
+      padding: 0 2rem;
       position: relative;
     }
     
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
       font-size: 4.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       font-weight: 700;
-      letter-spacing: 2px;
-      line-height: 1.2;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 50%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       animation: fadeInUp 1s ease-out;
     }
     
     .hero-text p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      max-width: 700px;
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+      color: rgba(255, 255, 255, 0.9);
+      animation: fadeInUp 1.2s ease-out;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-      animation: fadeInUp 1.2s ease-out;
     }
     
     .hero-btn {
       display: inline-block;
-      padding: 1.1rem 2.5rem;
-      background-color: var(--accent-color);
-      color: var(--text-dark);
+      padding: 1rem 2.5rem;
+      background: var(--gradient-primary);
+      color: var(--text-light);
       border-radius: var(--border-radius);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: var(--transition);
       animation: fadeInUp 1.4s ease-out;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
     }
     
     .hero-btn:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hero-btn::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.5s;
-    }
-
-    .hero-btn:hover::after {
-      left: 100%;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
     }
 
     .scroll-down {
@@ -492,134 +480,206 @@
       }
     }
     
+    /* Stats Section */
+    .stats-section {
+      padding: 6rem 5%;
+      background: var(--background-alt);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--border-radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-color);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-gray);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
     /* Banner Section */
     .banner {
       text-align: center;
-      padding: 6rem 1rem;
-      background-color: var(--secondary-color);
+      padding: 6rem 5%;
+      background: var(--background);
       position: relative;
-    }
-    
-    .banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background-color: var(--accent-color);
     }
     
     .banner h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
-      font-weight: 600;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .banner p {
       font-size: 1.2rem;
-      font-weight: 600;
+      color: var(--text-gray);
+      margin-bottom: 3rem;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--accent-color);
-      position: relative;
-      display: inline-block;
     }
 
-    .banner .guarantee-badges {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin-top: 3rem;
+    .guarantee-badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .badge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      max-width: 200px;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-radius: var(--border-radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .badge:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-color);
     }
 
     .badge i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--accent-color);
+      margin-bottom: 1.5rem;
+      display: block;
     }
 
     .badge h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--text-primary);
     }
 
     .badge p {
-      font-size: 0.9rem;
-      font-weight: 400;
+      font-size: 1rem;
+      color: var(--text-gray);
       text-transform: none;
       letter-spacing: 0;
-      color: var(--text-gray);
+      line-height: 1.6;
     }
     
     /* Categories */
     .categories-heading {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       padding-top: 6rem;
-      position: relative;
+      background: var(--background-alt);
     }
     
     .categories-heading h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      position: relative;
-      display: inline-block;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
     }
-    
-    .categories-heading h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-color);
+
+    .categories-heading p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
     }
     
     .categories {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 2rem;
       padding: 1rem 5% 6rem;
-      background-color: white;
+      background: var(--background-alt);
+      max-width: 1400px;
+      margin: 0 auto;
     }
     
     .category-card {
       position: relative;
       overflow: hidden;
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
       transition: var(--transition);
+      height: 400px;
       cursor: pointer;
-      height: 380px;
+      box-shadow: var(--shadow-sm);
     }
     
     .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-color);
     }
     
     .category-card img {
       width: 100%;
-      height: 100%;
+      height: 280px;
       object-fit: cover;
       transition: var(--transition);
     }
     
     .category-card:hover img {
-      transform: scale(1.08);
+      transform: scale(1.05);
     }
     
     .category-overlay {
@@ -628,26 +688,26 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 70%);
+      background: linear-gradient(to top, rgba(30, 41, 59, 0.9) 30%, transparent 70%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1.5rem;
+      padding: 2rem;
       transition: var(--transition);
     }
     
     .category-card:hover .category-overlay {
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 80%);
+      background: linear-gradient(to top, rgba(30, 41, 59, 0.95) 40%, transparent 80%);
     }
     
     .category-card h3 {
       color: var(--text-light);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 1px;
-      transition: var(--transition);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
       position: relative;
       padding-bottom: 10px;
-      font-size: 1.2rem;
     }
     
     .category-card h3::after {
@@ -657,23 +717,30 @@
       left: 0;
       width: 40px;
       height: 2px;
-      background-color: var(--accent-color);
+      background: var(--gradient-primary);
       transition: var(--transition);
     }
     
     .category-card:hover h3::after {
       width: 60px;
     }
+
+    .category-card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
     
     .category-btn {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: var(--accent-color);
-      color: var(--text-dark);
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-primary);
+      color: var(--text-light);
       border-radius: var(--border-radius);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       opacity: 0;
       transform: translateY(20px);
       transition: var(--transition);
@@ -684,45 +751,29 @@
       transform: translateY(0);
     }
     
-    .category-btn:hover {
-      background-color: var(--accent-hover);
-    }
-    
     /* Featured Collection Section */
     .featured-collection {
-      padding: 6rem 5% 7rem;
-      background-color: var(--secondary-color);
-      position: relative;
+      padding: 6rem 5%;
+      background: var(--background);
       text-align: center;
-    }
-    
-    .featured-heading {
-      margin-bottom: 3rem;
+      border-top: 1px solid var(--border-color);
     }
     
     .featured-heading h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .featured-heading h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-color);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
     }
     
     .featured-text {
       max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
       color: var(--text-gray);
       line-height: 1.8;
     }
@@ -736,151 +787,139 @@
     }
     
     .featured-brand {
-      background-color: white;
-      padding: 0.8rem 1.5rem;
+      background: var(--background-alt);
+      border: 1px solid var(--border-color);
+      padding: 1rem 2rem;
       border-radius: var(--border-radius);
       font-weight: 600;
-      box-shadow: var(--shadow-sm);
+      color: var(--text-primary);
       transition: var(--transition);
+      box-shadow: var(--shadow-sm);
     }
     
     .featured-brand:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
+      border-color: var(--accent-color);
       color: var(--accent-color);
     }
     
     .view-all-btn {
       display: inline-block;
       padding: 1rem 2.5rem;
-      background-color: var(--primary-color);
+      background: var(--gradient-primary);
       color: var(--text-light);
       border-radius: var(--border-radius);
-      font-weight: 500;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: var(--transition);
-      text-align: center;
+      box-shadow: var(--shadow-md);
     }
     
     .view-all-btn:hover {
-      background-color: var(--accent-color);
       transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
     }
     
     /* Top Brands */
     .top-brands {
       padding: 6rem 5%;
-      background-color: white;
+      background: var(--background-alt);
       text-align: center;
-      position: relative;
+      border-top: 1px solid var(--border-color);
     }
     
     .top-brands h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
       font-weight: 700;
-    }
-    
-    .top-brands h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-color);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .brands-carousel {
       max-width: 1300px;
       margin: 0 auto;
-      padding: 2rem;
-      background-color: white;
+      padding: 3rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
+      box-shadow: var(--shadow-lg);
     }
     
     .brands-slide {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     
     .brand-item {
       display: inline-block;
-      padding: 0.8rem 1.2rem;
-      background-color: var(--secondary-color);
+      padding: 1rem 1.5rem;
+      background: var(--background-alt);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
       transition: var(--transition);
       font-weight: 500;
-      font-size: 0.9rem;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
     }
     
     .brand-item:hover {
-      background-color: var(--accent-color);
-      color: white;
+      background: var(--gradient-primary);
+      color: var(--text-light);
       transform: translateY(-3px);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
     }
     
     /* Testimonials */
     .testimonials {
       padding: 6rem 5%;
-      background-color: var(--secondary-color);
+      background: var(--background);
       text-align: center;
-      position: relative;
+      border-top: 1px solid var(--border-color);
     }
     
     .testimonials h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 3rem;
-      position: relative;
-      display: inline-block;
       font-weight: 700;
-    }
-    
-    .testimonials h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-color);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
       max-width: 1300px;
       margin: 0 auto;
     }
     
     .testimonial-card {
-      background-color: white;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
       padding: 2.5rem;
-      box-shadow: var(--shadow-md);
       text-align: left;
       transition: var(--transition);
       position: relative;
+      box-shadow: var(--shadow-sm);
     }
     
     .testimonial-card:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-color);
     }
     
     .testimonial-card::before {
@@ -889,7 +928,7 @@
       top: 20px;
       left: 20px;
       font-size: 5rem;
-      color: rgba(0,0,0,0.05);
+      color: rgba(99, 102, 241, 0.1);
       font-family: 'Playfair Display', serif;
       line-height: 0.8;
     }
@@ -912,118 +951,145 @@
     .author-info h4 {
       font-weight: 600;
       margin-bottom: 0.2rem;
+      color: var(--text-primary);
     }
     
     .author-info p {
       font-size: 0.85rem;
-      color: var(--text-gray);
+      color: var(--text-muted);
     }
     
     /* Newsletter */
     .newsletter {
-      padding: 5rem 5%;
-      background-color: var(--primary-color);
+      padding: 6rem 5%;
+      background: var(--gradient-hero);
       color: var(--text-light);
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('top_brand_images/hero_main.jpg') center/cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .newsletter-content {
+      position: relative;
+      z-index: 1;
     }
     
     .newsletter h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
     }
     
     .newsletter p {
-      font-size: 1.1rem;
-      opacity: 0.8;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
     }
     
     .newsletter-form {
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
-      position: relative;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
     
     .newsletter-input {
-      width: 100%;
-      padding: 1.2rem;
+      flex: 1;
+      min-width: 250px;
+      padding: 1.2rem 1.5rem;
       border-radius: var(--border-radius);
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       outline: none;
       font-size: 1rem;
-      padding-right: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .newsletter-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .newsletter-input:focus {
+      border-color: var(--text-light);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
     
     .newsletter-btn {
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      bottom: 5px;
-      background-color: var(--accent-color);
-      color: var(--text-dark);
+      background: var(--text-light);
+      color: var(--text-primary);
       border: none;
-      border-radius: calc(var(--border-radius) - 3px);
-      padding: 0 1.5rem;
+      border-radius: var(--border-radius);
+      padding: 1.2rem 2rem;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
     .newsletter-btn:hover {
-      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
     }
     
     /* Footer */
     footer {
-      background-color: var(--primary-color);
+      background: var(--text-primary);
       color: var(--text-light);
       padding: 5rem 5% 2rem;
-      position: relative;
+      border-top: 1px solid var(--border-color);
     }
     
     .footer-logo {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 2rem;
       letter-spacing: 1px;
       margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-    
-    .footer-logo span {
-      color: var(--accent-color);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3.5rem;
+      gap: 3rem;
       margin-bottom: 3rem;
     }
     
     footer h4 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-    
-    footer h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background-color: var(--accent-color);
+      color: var(--text-light);
+      font-weight: 600;
     }
     
     footer p {
       line-height: 1.8;
-      color: #ddd;
+      color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
     
@@ -1036,9 +1102,10 @@
     }
     
     .footer-links a {
-      color: #ddd;
+      color: var(--text-muted);
       transition: var(--transition);
       display: inline-block;
+      font-weight: 500;
     }
     
     .footer-links a:hover {
@@ -1053,26 +1120,30 @@
     }
     
     .social-icon {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
       transition: var(--transition);
+      font-size: 1.1rem;
     }
     
     .social-icon:hover {
-      background-color: var(--accent-color);
-      transform: translateY(-5px);
+      background: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-color);
     }
     
     .copyright {
       text-align: center;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #aaa;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
       font-size: 0.9rem;
     }
     
@@ -1081,20 +1152,21 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      width: 50px;
-      height: 50px;
-      background-color: var(--accent-color);
+      width: 55px;
+      height: 55px;
+      background: var(--gradient-primary);
       color: white;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       z-index: 99;
       opacity: 0;
       visibility: hidden;
       transition: var(--transition);
+      font-size: 1.2rem;
     }
     
     .back-to-top.active {
@@ -1103,24 +1175,32 @@
     }
     
     .back-to-top:hover {
-      background-color: var(--accent-hover);
       transform: translateY(-5px);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
     }
     
     /* Mobile responsive */
     @media (max-width: 1200px) {
       .hero-text h1 {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
+      }
+      
+      .categories {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
     }
     
     @media (max-width: 992px) {
       .hero-text h1 {
-        font-size: 3.2rem;
+        font-size: 3rem;
       }
       
-      .banner .guarantee-badges {
-        flex-wrap: wrap;
+      .guarantee-badges {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .banner h2, .categories-heading h2, .featured-heading h2, .top-brands h2, .testimonials h2 {
+        font-size: 2.5rem;
       }
     }
     
@@ -1133,15 +1213,16 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 300px;
+        width: 320px;
         height: 100vh;
         flex-direction: column;
-        background-color: white;
+        background: var(--card-bg);
         gap: 0;
         padding: 5rem 2rem 2rem;
         transition: var(--transition);
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-xl);
         z-index: 999;
+        border-left: 1px solid var(--border-color);
       }
       
       .nav-links.active {
@@ -1149,11 +1230,10 @@
       }
       
       .nav-btn {
-        padding: 1rem;
-        font-size: 0.9rem;
         width: 100%;
-        text-align: left;
-        margin-bottom: 0.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
       }
       
       .close-menu {
@@ -1162,6 +1242,16 @@
         right: 20px;
         font-size: 1.5rem;
         cursor: pointer;
+        color: var(--text-gray);
+        padding: 0.5rem;
+        background: var(--background-alt);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-color);
       }
       
       .hero-text h1 {
@@ -1169,18 +1259,38 @@
       }
       
       .hero-text p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       
-      .newsletter-btn {
-        position: static;
-        width: 100%;
-        margin-top: 1rem;
-        padding: 1rem;
+      .guarantee-badges {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .categories {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
       }
       
       .newsletter-input {
-        padding-right: 1.2rem;
+        min-width: 100%;
+      }
+      
+      .newsletter-btn {
+        width: 100%;
+      }
+      
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
       }
     }
     
@@ -1190,314 +1300,287 @@
       }
       
       .category-card {
-        height: 300px;
+        height: 350px;
+      }
+      
+      .category-card img {
+        height: 230px;
+      }
+      
+      .categories {
+        grid-template-columns: 1fr;
+      }
+      
+      .banner h2, .categories-heading h2, .featured-heading h2, .top-brands h2, .testimonials h2 {
+        font-size: 2rem;
       }
       
       .testimonial-card {
         padding: 2rem 1.5rem;
       }
-    }
-    .login-content {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .cart-count {
-      font-size: 0.7rem;
-    }
-  </style>
-   <style>
-    /* Custom styles to fix modal issues */
-    .login-modal-custom {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      /* height: 100%;
-      display: flex; */
-      justify-content: center;
-      align-items: flex-start;
-      z-index: 1060;
-      padding-top: 20px;
-      background-color: rgba(0,0,0,0.5); /* Add semi-transparent backdrop */
 
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
-    .login-content {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    /* Hide the default Bootstrap backdrop */
-    .modal-backdrop {
-      display: none !important;
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
     
-    /* Nav icons styling */
-    .nav-icons {
-      display: flex;
-      gap: 15px;
-      padding: 10px;
+    ::-webkit-scrollbar-track {
+      background: var(--background-alt);
     }
     
-    .login-icon, .cart-icon {
-      cursor: pointer;
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 4px;
     }
     
-    .cart-count {
-      font-size: 0.7rem;
-      background: red;
-      color: white;
-      border-radius: 50%;
-      padding: 2px 5px;
-      position: relative;
-      top: -8px;
-      left: -5px;
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-hover);
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">ENE <span>LTD</span></div>
+    <div class="logo">ENE LTD</div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav class="nav-links">
       <span class="close-menu"><i class="fas fa-times"></i></span>
-      <a href="shop.html" class="nav-btn primary">Shop Brands</a>
-      <!-- Categories button removed -->
+      <a href="index.html" class="nav-btn secondary">Home</a>
       <a href="about.html" class="nav-btn secondary">About</a>
+      <a href="shop.html" class="nav-btn secondary">Brands</a>
       <a href="contact.html" class="nav-btn secondary">Contact</a>
+      <a href="portal.html" class="nav-btn primary">Partner Portal</a>
     </nav>
     
-    <!-- <div class="nav-icons">
-      <span class="login-icon"><i class="fas fa-user"></i></span>
-      <span class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count">0</span>
-      </span>
-    </div> -->
-    
-    <!-- Login Modal -->
-    <!-- <div class="login-modal">
-      <div class="login-content">
-        <span class="close-login"><i class="fas fa-times"></i></span>
-        <h2>Login</h2>
-        <form id="login-form">
-          <div class="form-group">
-            <label for="email">Username or Email</label>
-            <input type="text" id="email" name="email" placeholder="Enter your username or email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-          </div>
-          <div class="form-footer">
-            <div class="remember-me">
-              <input type="checkbox" id="remember" name="remember">
-              <label for="remember">Remember me</label>
-            </div>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-          </div>
-          <button type="submit" class="login-btn">LOGIN</button>
-        </form>
-        <div class="register-link">
-          <p>Don't have an account? <a href="#">Register</a></p>
-        </div>
-      </div>
-    </div> -->
-
-<!-- Navigation Icons -->
-<div class="nav-icons">
-  <span class="login-icon"><i class="fas fa-user"></i></span>
-  <span class="cart-icon">
-    <i class="fas fa-shopping-cart"></i>
-    <span class="cart-count">0</span>
-  </span>
-</div>
-
-<!-- Login Modal (Custom Implementation) -->
-<div class="login-modal-custom" id="loginModal" style="display: none;">
-  <div class="login-content">
-    <span class="close-login" style="float: right; cursor: pointer;">
-      <i class="fas fa-times"></i>
-    </span>
-    <h2>Login</h2>
-    <form id="login-form">
-      <div class="form-group mb-3">
-        <label for="email">Username or Email</label>
-        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your username or email" required>
-      </div>
-      <div class="form-group mb-3">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <div class="form-footer d-flex justify-content-between align-items-center mb-3">
-        <div class="remember-me form-check">
-          <input class="form-check-input" type="checkbox" id="remember" name="remember">
-          <label class="form-check-label" for="remember">Remember me</label>
-        </div>
-        <a href="#" class="forgot-password">Forgot Password?</a>
-      </div>
-      <button type="submit" class="login-btn btn btn-primary w-100">LOGIN</button>
-    </form>
-    <div class="register-link text-center mt-3">
-      <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none">Register</a></p>
+    <div class="nav-icons">
+      <span class="nav-icon login-icon"><i class="fas fa-user"></i></span>
+      <span class="nav-icon"><i class="fas fa-bell"></i></span>
     </div>
-  </div>
-</div>
-
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero full-banner">
-    <div class="hero-video-container">
-      <!-- Fallback to image if video not available -->
-      <img src="top_brand_images/hero_main.jpg" alt="Luxury Shopping" class="hero-video-bg">
+  <!-- Login Modal -->
+  <div class="login-modal-custom" id="loginModal">
+    <div class="login-content">
+      <span class="close-login">
+        <i class="fas fa-times"></i>
+      </span>
+      <h2>Partner Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Business Email</label>
+          <input type="text" id="email" name="email" placeholder="Enter your business email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-footer">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <button type="submit" class="login-btn">LOGIN TO PORTAL</button>
+      </form>
+      <div class="register-link">
+        <p>Need a business account? <a href="#" class="text-decoration-none">Apply for Partnership</a></p>
+      </div>
     </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-text">
-      <h1>DISCOVER LUXURY BRANDS</h1>
-      <p>Explore authentic, premium products from the world's most coveted designers at exceptional value</p>
-      <a href="shop.html" class="hero-btn">SHOP COLLECTION <i class="fas fa-arrow-right"></i></a>
+      <h1>PREMIUM B2B MARKETPLACE</h1>
+      <p>Connect with luxury brands and expand your business with our comprehensive wholesale platform designed for serious retailers</p>
+      <a href="shop.html" class="hero-btn">EXPLORE BRANDS <i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="scroll-down">
       <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Premium Brands</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">10K+</span>
+        <span class="stat-label">Business Partners</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">Satisfaction Rate</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Support Available</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Banner Section -->
   <section class="banner">
-    <h2>Premium Shopping Experience</h2>
-    <p>AUTHENTICATED & GUARANTEED</p>
+    <h2>Professional B2B Solutions</h2>
+    <p>AUTHENTICATED & GUARANTEED FOR BUSINESS</p>
     
     <div class="guarantee-badges">
       <div class="badge reveal">
         <i class="fas fa-certificate"></i>
         <h3>100% Authentic</h3>
-        <p>All products verified by our expert team</p>
+        <p>All products verified by our expert authentication team for business confidence</p>
       </div>
       <div class="badge reveal">
-        <i class="fas fa-box-open"></i>
-        <h3>Original Packaging</h3>
-        <p>Unused items in their brand packaging</p>
+        <i class="fas fa-handshake"></i>
+        <h3>B2B Pricing</h3>
+        <p>Wholesale pricing structures designed for retailers and business partners</p>
       </div>
       <div class="badge reveal">
         <i class="fas fa-shield-alt"></i>
-        <h3>Secure Shopping</h3>
-        <p>Encrypted and protected transactions</p>
+        <h3>Secure Transactions</h3>
+        <p>Enterprise-grade security for all business transactions and data</p>
       </div>
       <div class="badge reveal">
-        <i class="fas fa-truck"></i>
-        <h3>Fast Delivery</h3>
-        <p>Worldwide shipping on all orders</p>
+        <i class="fas fa-truck-fast"></i>
+        <h3>Global Logistics</h3>
+        <p>Worldwide B2B shipping solutions and dedicated account management</p>
       </div>
     </div>
   </section>
 
   <!-- Category Grid -->
   <div class="categories-heading">
-    <h2>SHOP BY CATEGORY</h2>
+    <h2>BUSINESS CATEGORIES</h2>
+    <p>Discover our comprehensive range of premium product categories, curated exclusively for B2B partnerships and wholesale distribution</p>
   </div>
   <section class="categories">
     <div class="category-card reveal">
       <img src="top_brand_images/ladies_apparel.jpg" alt="Ladies Apparel">
       <div class="category-overlay">
         <h3>LADIES APPAREL</h3>
-        <a href="category-ladies.html" class="category-btn"></a>
+        <p>Premium women's fashion for retail</p>
+        <a href="category-ladies.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/handbags.jpg" alt="Handbags">
       <div class="category-overlay">
-        <h3>HANDBAGS & SLG'S</h3>
-        <a href="category-handbags.html" class="category-btn"></a>
+        <h3>HANDBAGS & LEATHER GOODS</h3>
+        <p>Luxury accessories for discerning customers</p>
+        <a href="category-handbags.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/mens_apparel.jpg" alt="Mens Apparel">
       <div class="category-overlay">
         <h3>MENS APPAREL</h3>
-        <a href="category-mens.html" class="category-btn"></a>
+        <p>Professional men's fashion collections</p>
+        <a href="category-mens.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/accessories.jpg" alt="Fashion Accessories">
       <div class="category-overlay">
         <h3>FASHION ACCESSORIES</h3>
-        <a href="category-accessories.html" class="category-btn"></a>
+        <p>Complete your customers' look</p>
+        <a href="category-accessories.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/eyewear.jpg" alt="Eyewear">
       <div class="category-overlay">
         <h3>EYEWEAR</h3>
-        <a href="category-eyewear.html" class="category-btn"></a>
+        <p>Designer frames and sunglasses</p>
+        <a href="category-eyewear.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/footwear.jpg" alt="Footwear">
       <div class="category-overlay">
         <h3>FOOTWEAR</h3>
-        <a href="category-footwear.html" class="category-btn"></a>
+        <p>Premium shoes for every occasion</p>
+        <a href="category-footwear.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/kitchenwear.jpg" alt="Kitchenware">
       <div class="category-overlay">
         <h3>KITCHENWARE</h3>
-        <a href="category-kitchenware.html" class="category-btn"></a>
+        <p>Professional cooking and dining solutions</p>
+        <a href="category-kitchenware.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/watches.jpg" alt="Watches">
       <div class="category-overlay">
-        <h3>WATCHES</h3>
-        <a href="category-watches.html" class="category-btn"></a>
+        <h3>TIMEPIECES</h3>
+        <p>Luxury watches and precision instruments</p>
+        <a href="category-watches.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/toys.jpg" alt="Toys">
       <div class="category-overlay">
-        <h3>TOYS</h3>
-        <a href="category-toys.html" class="category-btn"></a>
+        <h3>LIFESTYLE PRODUCTS</h3>
+        <p>Premium lifestyle and gift items</p>
+        <a href="category-toys.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
     <div class="category-card reveal">
       <img src="top_brand_images/eletronics.jpg" alt="Electronics">
       <div class="category-overlay">
         <h3>ELECTRONICS</h3>
-        <a href="category-electronics.html" class="category-btn"></a>
+        <p>Tech accessories and consumer electronics</p>
+        <a href="category-electronics.html" class="category-btn">VIEW CATALOG</a>
       </div>
     </div>
   </section>
 
-  <!-- Featured Collection Section (Replaced the Featured Products) -->
+  <!-- Featured Collection Section -->
   <section class="featured-collection">
     <div class="featured-heading">
-      <h2>FEATURED COLLECTION</h2>
+      <h2>FEATURED BRAND PARTNERS</h2>
     </div>
-    <p class="featured-text">Discover our curated selection of premium products from the world's most prestigious brands. Each item is authenticated by our team of experts and offered at exceptional value.</p>
+    <p class="featured-text">Discover our curated selection of premium brands from the world's most prestigious manufacturers. Each partnership is carefully vetted to ensure authenticity, quality, and exceptional wholesale value for our B2B clients.</p>
     
     <div class="featured-brands">
-      <span class="featured-brand">Gucci</span>
-      <span class="featured-brand">Breitling</span>
-      <span class="featured-brand">Ray-Ban</span>
-      <span class="featured-brand">Louboutin</span>
-      <span class="featured-brand">Montblanc</span>
-      <span class="featured-brand">Tory Burch</span>
-      <span class="featured-brand">Swarovski</span>
-      <span class="featured-brand">Marc Jacobs</span>
+      <span class="featured-brand">GUCCI</span>
+      <span class="featured-brand">BREITLING</span>
+      <span class="featured-brand">RAY-BAN</span>
+      <span class="featured-brand">LOUBOUTIN</span>
+      <span class="featured-brand">MONTBLANC</span>
+      <span class="featured-brand">TORY BURCH</span>
+      <span class="featured-brand">SWAROVSKI</span>
+      <span class="featured-brand">MARC JACOBS</span>
     </div>
     
-    <a href="shop.html" class="view-all-btn">EXPLORE COLLECTION</a>
+    <a href="shop.html" class="view-all-btn">VIEW ALL PARTNERS</a>
   </section>
 
   <!-- Top Brands -->
   <section class="top-brands">
-    <h2>TOP BRANDS</h2>
+    <h2>PREMIUM BRAND PORTFOLIO</h2>
     <div class="brands-carousel">
       <div class="brands-slide">
         <a href="#" class="brand-item">BREITLING</a>
@@ -1526,32 +1609,32 @@
 
   <!-- Testimonials -->
   <section class="testimonials">
-    <h2>WHAT OUR CUSTOMERS SAY</h2>
+    <h2>PARTNER TESTIMONIALS</h2>
     <div class="testimonial-grid">
       <div class="testimonial-card reveal">
-        <p class="testimonial-content">I've been searching everywhere for an authentic Gucci bag at a reasonable price. ENE LTD delivered exactly what I wanted, and the verification process gave me complete peace of mind.</p>
+        <p class="testimonial-content">ENE LTD has transformed our luxury retail business. Their B2B platform provides consistent access to authentic products with competitive wholesale pricing. The dedicated account management makes all the difference.</p>
         <div class="testimonial-author">
           <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>Verified Buyer</p>
+            <h4>Sarah Chen</h4>
+            <p>CEO, Luxury Boutique Group</p>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <p class="testimonial-content">The customer service at ENE LTD is exceptional. They helped me find the perfect Breitling watch for my husband's birthday. Fast shipping and beautiful packaging too!</p>
+        <p class="testimonial-content">Working with ENE LTD for over 3 years has been exceptional. Their authentication process is thorough, shipping is reliable, and the business terms are transparent. Highly recommend for serious retailers.</p>
         <div class="testimonial-author">
           <div class="author-info">
-            <h4>Michael Thompson</h4>
-            <p>Verified Buyer</p>
+            <h4>Michael Rodriguez</h4>
+            <p>Procurement Director, Metro Fashion</p>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <p class="testimonial-content">As a collector of luxury items, I'm extremely picky about authenticity. ENE LTD has never disappointed me. Their selection is impressive and their prices are competitive.</p>
+        <p class="testimonial-content">As a luxury watch retailer, authenticity is paramount. ENE LTD's verification process and business partnerships give us complete confidence in every transaction. Their B2B platform is industry-leading.</p>
         <div class="testimonial-author">
           <div class="author-info">
-            <h4>Jessica Williams</h4>
-            <p>Verified Buyer</p>
+            <h4>Jennifer Walsh</h4>
+            <p>Owner, Precision Timepieces</p>
           </div>
         </div>
       </div>
@@ -1560,57 +1643,59 @@
 
   <!-- Newsletter -->
   <section class="newsletter">
-    <h2>STAY UPDATED</h2>
-    <p>Subscribe to our newsletter and be the first to know about new arrivals, exclusive offers, and special events.</p>
-    <form class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="Enter your email address">
-      <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
-    </form>
+    <div class="newsletter-content">
+      <h2>BUSINESS UPDATES</h2>
+      <p>Subscribe to receive exclusive B2B offers, new brand partnerships, market insights, and industry updates delivered to your business inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your business email address">
+        <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div>
-        <h3 class="footer-logo">ENE <span>LTD</span></h3>
-        <p>Your trusted destination for authentic luxury goods at competitive prices. We pride ourselves on offering genuine products with exceptional service.</p>
+        <h3 class="footer-logo">ENE LTD</h3>
+        <p>Your premier B2B destination for authentic luxury goods. We specialize in providing genuine products with exceptional wholesale pricing and dedicated account management for serious business partners.</p>
         <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
           <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
       <div>
-        <h4>INFORMATION</h4>
+        <h4>BUSINESS SERVICES</h4>
         <ul class="footer-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="shipping.html">Shipping & Returns</a></li>
+          <li><a href="about.html">About ENE LTD</a></li>
+          <li><a href="shop.html">Brand Portfolio</a></li>
+          <li><a href="partnership.html">Partnership Program</a></li>
+          <li><a href="wholesale.html">Wholesale Pricing</a></li>
+          <li><a href="catalog.html">Product Catalog</a></li>
         </ul>
       </div>
       <div>
-        <h4>CUSTOMER SERVICE</h4>
+        <h4>SUPPORT & SERVICES</h4>
         <ul class="footer-links">
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="track-order.html">Track Order</a></li>
-          <li><a href="returns.html">Returns & Exchanges</a></li>
+          <li><a href="faq.html">Business FAQ</a></li>
+          <li><a href="account.html">Account Management</a></li>
+          <li><a href="orders.html">Order Tracking</a></li>
+          <li><a href="returns.html">B2B Returns Policy</a></li>
           <li><a href="authenticity.html">Authenticity Guarantee</a></li>
-          <li><a href="care.html">Product Care</a></li>
         </ul>
       </div>
       <div>
-        <h4>CONTACT US</h4>
+        <h4>CONTACT</h4>
         <p><i class="fas fa-map-marker-alt"></i> 22 West 48th Street, New York, NY 10036</p>
         <p><i class="fas fa-phone"></i> (212) 951-7379</p>
         <p><i class="fas fa-envelope"></i> Sales@ene-ltd.com</p>
-        <p><i class="fas fa-clock"></i> Monday-Friday: 9:00 AM - 6:00 PM</p>
+        <p><i class="fas fa-clock"></i> Monday-Friday: 9:00 AM - 6:00 PM EST</p>
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 1985 ENE LTD. All Rights Reserved.</p>
+      <p>&copy; 1985 ENE LTD. All Rights Reserved. — Premium B2B Luxury Marketplace | All products are authentic and in original packaging.</p>
     </div>
   </footer>
 
@@ -1619,355 +1704,118 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <!-- My code starts -->
-  <!-- Include Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-
-
-  // Get elements
-  const loginModal = document.getElementById('loginModal');
-  const loginIcon = document.querySelector('.login-icon');
-  const closeBtn = document.querySelector('.close-login');
-  const loginForm = document.getElementById('login-form');
-  const registerLink = document.querySelector('.register-link a');
-  const userIcon = document.querySelector('.login-icon i');
-
-  
-
-  // Show modal when login icon is clicked
-  loginIcon.addEventListener('click', function() {
-    // Check if already logged in
-    if (userIcon.classList.contains('logged-in')) {
-      if (confirm('Would you like to logout?')) {
-        userIcon.classList.remove('logged-in', 'fa-user-check');
-        userIcon.classList.add('fa-user');
-        localStorage.removeItem('fakeLoggedIn');
-      }
-      return;
-    }
-    loginModal.style.display = 'flex';
-  });
-
-  // Close modal when X is clicked
-  closeBtn.addEventListener('click', function() {
-    loginModal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside content (on backdrop)
-  loginModal.addEventListener('click', function(e) {
-    if (e.target === loginModal) {
-      loginModal.style.display = 'none';
-    }
-  });
-
-  // Close modal when register link is clicked
-  registerLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    loginModal.style.display = 'none';
-  });
-
-  // Handle form submission (fake login)
-  loginForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const rememberMe = document.getElementById('remember').checked;
-    
-    // Fake validation - any non-empty input works
-    if (email.trim() && password.trim()) {
-      // Show loading state
-      const submitBtn = loginForm.querySelector('button');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Logging in...';
-      
-      // Fake authentication delay
-      setTimeout(() => {
-        // Update UI to show logged in state
-        userIcon.classList.remove('fa-user');
-        userIcon.classList.add('fa-user-check', 'logged-in');
-        
-        // Store login state if "Remember me" is checked
-        if (rememberMe) {
-          localStorage.setItem('fakeLoggedIn', 'true');
-        }
-        
-        // Close modal and reset form
-        loginModal.style.display = 'none';
-        loginForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'LOGIN';
-        
-        // Show welcome message
-        alert(`Welcome! (LoggedIn)`);
-      }, 1000);
-    } else {
-      alert('Please enter both username and password');
-    }
-  });
-
-  // Check for remembered login on page load
-  if (localStorage.getItem('fakeLoggedIn')) {
-    userIcon.classList.remove('fa-user');
-    userIcon.classList.add('fa-user-check', 'logged-in');
-  }
-});
-</script>
-  <!-- My code ends -->
-  <script>
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-      // Check if user is already logged in
-      const isLoggedIn = localStorage.getItem('eneUserIsLoggedIn') === 'true';
-      const username = localStorage.getItem('eneLoggedInUser');
-      
-      if (isLoggedIn && username) {
-        // Update login icon to show logged in state
-        const loginIconElement = document.querySelector('.login-icon i');
-        loginIconElement.className = 'fas fa-user-check';
-        
-        // Optional: Show a welcome back message
-        const notification = document.createElement('div');
-        notification.style.position = 'fixed';
-        notification.style.top = '20px';
-        notification.style.right = '20px';
-        notification.style.backgroundColor = 'var(--accent-color)';
-        notification.style.color = 'white';
-        notification.style.padding = '10px 20px';
-        notification.style.borderRadius = 'var(--border-radius)';
-        notification.style.boxShadow = 'var(--shadow-md)';
-        notification.style.zIndex = '9999';
-        notification.style.opacity = '0';
-        notification.style.transform = 'translateY(-20px)';
-        notification.style.transition = 'all 0.3s ease';
-        notification.innerHTML = '<i class="fas fa-check-circle"></i> Welcome back, ' + username + '!';
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-          notification.style.opacity = '1';
-          notification.style.transform = 'translateY(0)';
-        }, 500);
-        
-        setTimeout(() => {
-          notification.style.opacity = '0';
-          notification.style.transform = 'translateY(-20px)';
-          setTimeout(() => {
-            document.body.removeChild(notification);
-          }, 300);
-        }, 3000);
-      }
       // Mobile menu toggle
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      const closeMenu = document.querySelector('.close-menu');
+      const closeMenu = document.querySelector('.close-menu') || document.createElement('span');
       
-      menuToggle.addEventListener('click', function() {
-        navLinks.classList.add('active');
+      if (!document.querySelector('.close-menu')) {
+        closeMenu.className = 'close-menu';
+        closeMenu.innerHTML = '<i class="fas fa-times"></i>';
+        navLinks.prepend(closeMenu);
+      }
+      
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          navLinks.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+      
+      if (closeMenu) {
+        closeMenu.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+      
+      // Close menu when clicking on nav links
+      const navButtons = document.querySelectorAll('.nav-btn');
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Login Modal Functionality
+      const loginModal = document.getElementById('loginModal');
+      const loginIcon = document.querySelector('.login-icon');
+      const closeBtn = document.querySelector('.close-login');
+      const loginForm = document.getElementById('login-form');
+
+      // Show modal when login icon is clicked
+      loginIcon.addEventListener('click', function() {
+        const isLoggedIn = localStorage.getItem('eneUserIsLoggedIn') === 'true';
+        const username = localStorage.getItem('eneLoggedInUser');
+        
+        if (isLoggedIn && username) {
+          if (confirm(`You are logged in as ${username}. Would you like to logout?`)) {
+            localStorage.removeItem('eneUserIsLoggedIn');
+            localStorage.removeItem('eneLoggedInUser');
+            
+            const loginIconElement = document.querySelector('.login-icon i');
+            loginIconElement.className = 'fas fa-user';
+            
+            showNotification('You have been logged out successfully.', 'info');
+          }
+          return;
+        }
+        
+        loginModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => document.getElementById('email').focus(), 100);
+      });
+
+      // Close modal
+      closeBtn.addEventListener('click', function() {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // Close modal when clicking outside
+      loginModal.addEventListener('click', function(e) {
+        if (e.target === loginModal) {
+          loginModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Handle login form submission
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        
+        if (!email || !password) {
+          showNotification('Please fill in both fields', 'error');
+          return;
+        }
+
+        // Simulate login process
+        const displayName = email.includes('@') ? email.split('@')[0] : email;
+        localStorage.setItem('eneLoggedInUser', displayName);
+        localStorage.setItem('eneUserIsLoggedIn', 'true');
+
+        // Update login icon
+        const loginIconElement = document.querySelector('.login-icon i');
+        loginIconElement.className = 'fas fa-user-check';
+
+        // Close modal and show success
+        loginModal.classList.remove('active');
+        document.body.style.overflow = '';
+        loginForm.reset();
+        
+        showNotification(`Welcome to the partner portal, ${displayName}!`, 'success');
       });
       
-      closeMenu.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-      });
-      
-
-
-
-
-
-
-
-
-
-
-
-
-      // Login Modal - Improved functionality
-const loginIcon = document.querySelector('.login-icon');
-const loginModal = document.querySelector('.login-modal');
-const closeLogin = document.querySelector('.close-login');
-const loginForm = document.getElementById('login-form');
-
-// Function to close the login modal
-function closeLoginModal() {
-  loginModal.classList.remove('active');
-  document.body.style.overflow = ''; // Restore scrolling
-}
-
-// Open login modal when clicking login icon
-loginIcon.addEventListener('click', function() {
-  // Check if user is already logged in
-  const isLoggedIn = localStorage.getItem('eneUserIsLoggedIn') === 'true';
-  const username = localStorage.getItem('eneLoggedInUser');
-  
-  if (isLoggedIn && username) {
-    // Show logout option
-    const logoutConfirm = confirm(`You are currently logged in as ${username}. Would you like to log out?`);
-    
-    if (logoutConfirm) {
-      // Log out user
-      localStorage.removeItem('eneUserIsLoggedIn');
-      localStorage.removeItem('eneLoggedInUser');
-      
-      // Reset login icon
-      const loginIconElement = document.querySelector('.login-icon i');
-      loginIconElement.className = 'fas fa-user';
-      
-      // Show logged out notification
-      const notification = document.createElement('div');
-      notification.style.position = 'fixed';
-      notification.style.top = '20px';
-      notification.style.right = '20px';
-      notification.style.backgroundColor = 'var(--accent-color)';
-      notification.style.color = 'white';
-      notification.style.padding = '10px 20px';
-      notification.style.borderRadius = 'var(--border-radius)';
-      notification.style.boxShadow = 'var(--shadow-md)';
-      notification.style.zIndex = '9999';
-      notification.style.opacity = '0';
-      notification.style.transform = 'translateY(-20px)';
-      notification.style.transition = 'all 0.3s ease';
-      notification.innerHTML = '<i class="fas fa-check-circle"></i> You have been logged out.';
-      
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.style.opacity = '1';
-        notification.style.transform = 'translateY(0)';
-      }, 10);
-      
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        notification.style.transform = 'translateY(-20px)';
-        setTimeout(() => {
-          document.body.removeChild(notification);
-        }, 300);
-      }, 3000);
-    }
-  } else {
-    // Show login modal for non-logged in users
-    loginModal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-    
-    // Focus on the first input field
-    setTimeout(() => {
-      document.getElementById('email').focus();
-    }, 100);
-  }
-});
-
-// Close button functionality
-closeLogin.addEventListener('click', function(e) {
-  e.preventDefault();
-  closeLoginModal();
-});
-
-// Close modal when clicking outside the content
-loginModal.addEventListener('click', function(e) {
-  if (e.target === loginModal) {
-    closeLoginModal();
-  }
-});
-
-// Close modal when pressing escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && loginModal.classList.contains('active')) {
-    closeLoginModal();
-  }
-});
-
-// Handle login form submission
-loginForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-
-  const oldError = document.querySelector('.login-error');
-  if (oldError) oldError.remove();
-
-  if (!email || !password) {
-    const errorMsg = document.createElement('div');
-    errorMsg.textContent = 'Please fill in both fields';
-    errorMsg.className = 'login-error';
-    loginForm.appendChild(errorMsg);
-    return;
-  }
-
-  // Login successful - store username
-  const displayName = email.includes('@') ? email.split('@')[0] : email;
-  localStorage.setItem('eneLoggedInUser', displayName);
-  localStorage.setItem('eneUserIsLoggedIn', 'true');
-
-  // Update login icon
-  const loginIconElement = document.querySelector('.login-icon i');
-  loginIconElement.className = 'fas fa-user-check';
-
-  // Show success notification
-  const notification = document.createElement('div');
-  notification.style.position = 'fixed';
-  notification.style.top = '20px';
-  notification.style.right = '20px';
-  notification.style.backgroundColor = 'var(--accent-color)';
-  notification.style.color = 'white';
-  notification.style.padding = '10px 20px';
-  notification.style.borderRadius = 'var(--border-radius)';
-  notification.style.boxShadow = 'var(--shadow-md)';
-  notification.style.zIndex = '9999';
-  notification.style.opacity = '0';
-  notification.style.transform = 'translateY(-20px)';
-  notification.style.transition = 'all 0.3s ease';
-  notification.innerHTML = '<i class="fas fa-check-circle"></i> Welcome, ' + displayName + '!';
-
-  document.body.appendChild(notification);
-
-  // Show notification
-  setTimeout(() => {
-    notification.style.opacity = '1';
-    notification.style.transform = 'translateY(0)';
-  }, 10);
-
-  // Close notification and modal
-  setTimeout(() => {
-    notification.style.opacity = '0';
-    notification.style.transform = 'translateY(-20px)';
-    setTimeout(() => {
-      document.body.removeChild(notification);
-    }, 300);
-  }, 3000);
-
-  // Close the login modal
-  closeLoginModal();
-  
-  // Reset form
-  loginForm.reset();
-  
-  // Reload page to update all elements
-  setTimeout(() => {
-    window.location.reload();
-  }, 1000);
-});
-
-
-
-
-
-
-
-
-
-
       // Navbar scroll effect
       const navbar = document.querySelector('.navbar');
       window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
           navbar.classList.add('scrolled');
         } else {
           navbar.classList.remove('scrolled');
@@ -1990,7 +1838,7 @@ loginForm.addEventListener('submit', function(e) {
       }
       
       window.addEventListener('scroll', revealElements);
-      revealElements(); // Trigger on page load
+      revealElements();
       
       // Back to top button
       const backToTopBtn = document.querySelector('.back-to-top');
@@ -2010,23 +1858,6 @@ loginForm.addEventListener('submit', function(e) {
         });
       });
       
-      // Smooth scroll for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
       // Scroll down arrow animation
       const scrollDownArrow = document.querySelector('.scroll-down');
       if (scrollDownArrow) {
@@ -2038,41 +1869,65 @@ loginForm.addEventListener('submit', function(e) {
         });
       }
       
-      // Interactive category cards
+      // Newsletter form submission
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {   
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('.newsletter-input').value;
+          
+          if (email) {
+            showNotification('Thank you for subscribing! We\'ll keep you updated on new partnerships and business opportunities.', 'success');
+            this.querySelector('.newsletter-input').value = '';
+          } else {
+            showNotification('Please enter a valid business email address.', 'error');
+          }
+        });
+      }
+      
+      // Brand card hover effects
       const categoryCards = document.querySelectorAll('.category-card');
       categoryCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-          this.querySelector('.category-btn').style.opacity = '1';
-          this.querySelector('.category-btn').style.transform = 'translateY(0)';
+          this.style.transform = 'translateY(-12px) scale(1.02)';
         });
         
         card.addEventListener('mouseleave', function() {
-          this.querySelector('.category-btn').style.opacity = '0';
-          this.querySelector('.category-btn').style.transform = 'translateY(20px)';
+          this.style.transform = 'translateY(0) scale(1)';
         });
       });
       
-      // Cart functionality
-      const cartIcon = document.querySelector('.cart-icon');
-      const cartCount = document.querySelector('.cart-count');
-      let count = 0;
+      // Interactive featured brands
+      const featuredBrands = document.querySelectorAll('.featured-brand');
+      featuredBrands.forEach((brand, index) => {
+        brand.style.animationDelay = `${index * 0.1}s`;
+        brand.classList.add('animate__animated', 'animate__fadeInUp');
+      });
       
-      cartIcon.addEventListener('click', function() {
-        // Show notification
+      // Notification system
+      function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
-        notification.style.position = 'fixed';
-        notification.style.top = '20px';
-        notification.style.right = '20px';
-        notification.style.backgroundColor = 'var(--accent-color)';
-        notification.style.color = 'white';
-        notification.style.padding = '15px 25px';
-        notification.style.borderRadius = 'var(--border-radius)';
-        notification.style.boxShadow = 'var(--shadow-md)';
-        notification.style.zIndex = '9999';
-        notification.style.opacity = '0';
-        notification.style.transform = 'translateY(-20px)';
-        notification.style.transition = 'all 0.3s ease';
-        notification.innerHTML = '<i class="fas fa-shopping-cart"></i> Your cart is empty. Start shopping!';
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : 
+                      type === 'error' ? 'linear-gradient(135deg, #ef4444, #dc2626)' : 
+                      'linear-gradient(135deg, #6366f1, #4f46e5)'};
+          color: white;
+          padding: 1rem 1.5rem;
+          border-radius: 12px;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          z-index: 9999;
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          font-weight: 500;
+          max-width: 350px;
+        `;
+        notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 
+                                                  type === 'error' ? 'exclamation-circle' : 
+                                                  'info-circle'}"></i> ${message}`;
         
         document.body.appendChild(notification);
         
@@ -2085,24 +1940,126 @@ loginForm.addEventListener('submit', function(e) {
           notification.style.opacity = '0';
           notification.style.transform = 'translateY(-20px)';
           setTimeout(() => {
-            document.body.removeChild(notification);
+            if (document.body.contains(notification)) {
+              document.body.removeChild(notification);
+            }
           }, 300);
-        }, 3000);
+        }, 4000);
+      }
+      
+      // Nav icon interactions
+      const navIcons = document.querySelectorAll('.nav-icon:not(.login-icon)');
+      navIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+          const iconType = this.querySelector('i').classList.contains('fa-bell') ? 'Notifications' : 'Dashboard';
+          showNotification(`${iconType} panel coming soon for business partners!`, 'info');
+        });
       });
       
-      // Featured brands animation
-      const featuredBrands = document.querySelectorAll('.featured-brand');
-      featuredBrands.forEach((brand, index) => {
-        brand.style.animationDelay = `${index * 0.1}s`;
-        brand.classList.add('animate__animated', 'animate__fadeInUp');
+      // Check for existing login state on page load
+      const isLoggedIn = localStorage.getItem('eneUserIsLoggedIn') === 'true';
+      const username = localStorage.getItem('eneLoggedInUser');
+      
+      if (isLoggedIn && username) {
+        const loginIconElement = document.querySelector('.login-icon i');
+        loginIconElement.className = 'fas fa-user-check';
+        
+        setTimeout(() => {
+          showNotification(`Welcome back, ${username}! Access your partner dashboard.`, 'success');
+        }, 500);
+      }
+      
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observe elements for animation
+      const animatedElements = document.querySelectorAll('.category-card, .badge, .testimonial-card, .stat-card');
+      animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(el);
+      });
+      
+      // Portal button functionality
+      const portalBtn = document.querySelector('a[href="portal.html"]');
+      if (portalBtn) {
+        portalBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          showNotification('Redirecting to secure partner portal...', 'info');
+          setTimeout(() => {
+            window.location.href = 'portal.html';
+          }, 1000);
+        });
+      }
+      
+      // Brand item interactions
+      const brandItems = document.querySelectorAll('.brand-item');
+      brandItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const brandName = this.textContent;
+          showNotification(`Loading ${brandName} product catalog...`, 'info');
+        });
+      });
+
+      // Enhanced stat card animations
+      const statCards = document.querySelectorAll('.stat-card');
+      statCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+        
+        // Add counter animation for numbers
+        const numberElement = card.querySelector('.stat-number');
+        const finalNumber = numberElement.textContent;
+        
+        if (finalNumber.includes('+')) {
+          const baseNumber = parseInt(finalNumber.replace(/[^\d]/g, ''));
+          let currentNumber = 0;
+          const increment = baseNumber / 50;
+          
+          const timer = setInterval(() => {
+            currentNumber += increment;
+            if (currentNumber >= baseNumber) {
+              numberElement.textContent = finalNumber;
+              clearInterval(timer);
+            } else {
+              numberElement.textContent = Math.floor(currentNumber) + (finalNumber.includes('K') ? 'K+' : finalNumber.includes('%') ? '%' : '+');
+            }
+          }, 50);
+        }
+      });
+
+      // Enhanced testimonial interactions
+      const testimonialCards = document.querySelectorAll('.testimonial-card');
+      testimonialCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.3}s`;
+        
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
       });
     });
-
-
+    
+    // Ensure elements are revealed on page load
     window.addEventListener('load', () => {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-});
-
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    });
   </script>
-
-
+</body>
+</html>
