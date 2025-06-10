@@ -12,8 +12,8 @@
     :root {
       --primary-color: #0a0b1e;
       --secondary-color: #1a1d3a;
-      --accent-color: #6366f1;
-      --accent-hover: #4f46e5;
+      --accent-color: #f59e0b;
+      --accent-hover: #d97706;
       --success-color: #10b981;
       --warning-color: #f59e0b;
       --text-light: #ffffff;
@@ -22,19 +22,19 @@
       --text-gray: #64748b;
       --text-muted: #94a3b8;
       --background: #ffffff;
-      --background-alt: #f8fafc;
+      --background-alt: #fffbeb;
       --card-bg: #ffffff;
-      --border-color: #e2e8f0;
-      --border-light: #f1f5f9;
-      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --gradient-hero: linear-gradient(135deg, rgba(10, 11, 30, 0.95) 0%, rgba(99, 102, 241, 0.9) 100%);
+      --border-color: #fde68a;
+      --border-light: #fef3c7;
+      --gradient-primary: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      --gradient-secondary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      --gradient-accent: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+      --gradient-hero: linear-gradient(135deg, rgba(10, 11, 30, 0.95) 0%, rgba(245, 158, 11, 0.9) 100%);
       --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+      --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.3);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --border-radius: 12px;
     }
@@ -190,7 +190,7 @@
     .nav-btn.secondary:hover {
       border-color: var(--accent-color);
       color: var(--text-primary);
-      background: rgba(99, 102, 241, 0.05);
+      background: rgba(245, 158, 11, 0.05);
     }
 
     .nav-btn::before {
@@ -200,7 +200,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
       transition: left 0.5s;
     }
 
@@ -315,7 +315,7 @@
     
     .form-group input:focus {
       border-color: var(--accent-color);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
     }
     
     .form-footer {
@@ -401,7 +401,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(10, 11, 30, 0.8), rgba(99, 102, 241, 0.6));
+      background: linear-gradient(135deg, rgba(10, 11, 30, 0.8), rgba(245, 158, 11, 0.6));
       z-index: 0;
     }
     
@@ -928,7 +928,7 @@
       top: 20px;
       left: 20px;
       font-size: 5rem;
-      color: rgba(99, 102, 241, 0.1);
+      color: rgba(245, 158, 11, 0.1);
       font-family: 'Playfair Display', serif;
       line-height: 0.8;
     }
@@ -1365,7 +1365,7 @@
       <a href="about.html" class="nav-btn secondary">About</a>
       <a href="shop.html" class="nav-btn secondary">Brands</a>
       <a href="contact.html" class="nav-btn secondary">Contact</a>
-      <a href="portal.html" class="nav-btn primary">Partner Portal</a>
+      
     </nav>
     
     <div class="nav-icons">
@@ -1902,7 +1902,7 @@
         brand.classList.add('animate__animated', 'animate__fadeInUp');
       });
       
-      // Notification system
+      // Notification system (Updated for yellow theme)
       function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         notification.style.cssText = `
@@ -1911,7 +1911,7 @@
           right: 20px;
           background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : 
                       type === 'error' ? 'linear-gradient(135deg, #ef4444, #dc2626)' : 
-                      'linear-gradient(135deg, #6366f1, #4f46e5)'};
+                      'linear-gradient(135deg, #f59e0b, #d97706)'};
           color: white;
           padding: 1rem 1.5rem;
           border-radius: 12px;
@@ -1959,13 +1959,19 @@
       const username = localStorage.getItem('eneLoggedInUser');
       
       if (isLoggedIn && username) {
-        const loginIconElement = document.querySelector('.login-icon i');
-        loginIconElement.className = 'fas fa-user-check';
-        
-        setTimeout(() => {
-          showNotification(`Welcome back, ${username}! Access your partner dashboard.`, 'success');
-        }, 500);
-      }
+  const loginIconElement = document.querySelector('.login-icon i');
+  loginIconElement.className = 'fas fa-user-check';
+
+  // Show welcome only if it hasn't been shown in this session
+  const hasShownWelcome = sessionStorage.getItem('eneWelcomeShown');
+  if (!hasShownWelcome) {
+    setTimeout(() => {
+      showNotification(`Welcome back, ${username}! Access your partner dashboard.`, 'success');
+    }, 500);
+    sessionStorage.setItem('eneWelcomeShown', 'true');
+  }
+}
+
       
       // Intersection Observer for animations
       const observerOptions = {
