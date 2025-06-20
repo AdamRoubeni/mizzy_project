@@ -1036,6 +1036,13 @@
 
 
 
+
+
+
+
+
+  
+
   <!-- About Main Content -->
   <section class="about-main">
     <div class="about-container">
@@ -1046,21 +1053,42 @@
           <p>A leading B2B marketplace connecting luxury brands with serious retailers worldwide</p>
         </div>
         
-        <div class="content-grid">
-          <div class="content-text">
-            <h3>Industry Leaders Since 1985</h3>
-            <p>
-              With over four decades of experience in luxury goods distribution, ENE LTD has established itself as the premier B2B marketplace for authentic luxury products. Our extensive network spans across continents, connecting prestigious brands with qualified retail partners.
-            </p>
-            <p>
-              Founded on principles of authenticity, reliability, and exceptional service, we've built lasting relationships with both suppliers and retailers. Our deep understanding of market dynamics and consumer trends enables us to provide strategic guidance that drives business success.
-            </p>
-            <p>
-              Today, ENE LTD serves as the trusted bridge between luxury manufacturers and retail partners, facilitating billions in wholesale transactions annually while maintaining the highest standards of authenticity and service excellence.
-            </p>
+        <div class="content-grid enhanced-grid">
+          <div class="content-text enhanced-content">
+            <div class="content-header">
+              <div class="header-accent"></div>
+              <h3>Industry Leaders Since 1985</h3>
+            </div>
+            <div class="content-body">
+              <p class="highlight-paragraph">
+                With over four decades of experience in luxury goods distribution, ENE LTD has established itself as the premier B2B marketplace for authentic luxury products. Our extensive network spans across continents, connecting prestigious brands with qualified retail partners.
+              </p>
+              <p>
+                Founded on principles of authenticity, reliability, and exceptional service, we've built lasting relationships with both suppliers and retailers. Our deep understanding of market dynamics and consumer trends enables us to provide strategic guidance that drives business success.
+              </p>
+              <p>
+                Today, ENE LTD serves as the trusted bridge between luxury manufacturers and retail partners, facilitating billions in wholesale transactions annually while maintaining the highest standards of authenticity and service excellence.
+              </p>
+            </div>
+            <div class="content-footer">
+              <div class="achievement-badges">
+                <div class="badge">
+                  <i class="fas fa-trophy"></i>
+                  <span>Industry Leader</span>
+                </div>
+                <div class="badge">
+                  <i class="fas fa-handshake"></i>
+                  <span>Trusted Partner</span>
+                </div>
+                <div class="badge">
+                  <i class="fas fa-globe"></i>
+                  <span>Global Reach</span>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div class="content-visual">
+          <div class="content-visual enhanced-visual">
             <div class="visual-features">
               <div class="visual-feature">
                 <i class="feature-icon fas fa-chart-line"></i>
@@ -1188,9 +1216,11 @@
         <p>Our proven methodology for B2B luxury commerce success</p>
       </div>
       
-      <div class="process-timeline">
+      <div class="process-timeline fixed-timeline">
         <div class="process-step reveal">
-          <div class="process-number">1</div>
+          <div class="process-number-container">
+            <div class="process-number">1</div>
+          </div>
           <div class="process-content">
             <h4>Partnership Onboarding</h4>
             <p>We begin with a comprehensive assessment of your business needs, market position, and growth objectives. Our team evaluates your requirements and designs a customized partnership program with appropriate credit terms, pricing tiers, and service levels.</p>
@@ -1198,7 +1228,9 @@
         </div>
         
         <div class="process-step reveal">
-          <div class="process-number">2</div>
+          <div class="process-number-container">
+            <div class="process-number">2</div>
+          </div>
           <div class="process-content">
             <h4>Product Curation & Authentication</h4>
             <p>Our buyers and authentication specialists curate products from verified brand partners. Every item undergoes multi-point verification including brand authentication, condition assessment, and packaging inspection before entering our inventory.</p>
@@ -1206,7 +1238,9 @@
         </div>
         
         <div class="process-step reveal">
-          <div class="process-number">3</div>
+          <div class="process-number-container">
+            <div class="process-number">3</div>
+          </div>
           <div class="process-content">
             <h4>Platform Integration & Training</h4>
             <p>Partners gain access to our advanced B2B platform with real-time inventory, automated ordering, and analytics tools. Our team provides comprehensive training and ongoing support to maximize platform utilization and business efficiency.</p>
@@ -1214,7 +1248,9 @@
         </div>
         
         <div class="process-step reveal">
-          <div class="process-number">4</div>
+          <div class="process-number-container">
+            <div class="process-number">4</div>
+          </div>
           <div class="process-content">
             <h4>Order Management & Fulfillment</h4>
             <p>Our automated systems process orders efficiently with real-time inventory updates. Our fulfillment centers handle picking, packing, and shipping with full tracking and insurance coverage for every shipment.</p>
@@ -1222,7 +1258,9 @@
         </div>
         
         <div class="process-step reveal">
-          <div class="process-number">5</div>
+          <div class="process-number-container">
+            <div class="process-number">5</div>
+          </div>
           <div class="process-content">
             <h4>Ongoing Support & Optimization</h4>
             <p>Dedicated account managers provide continuous support, market insights, and strategic guidance. We regularly analyze performance metrics and recommend optimizations to improve profitability and operational efficiency.</p>
@@ -1288,7 +1326,263 @@
   </footer>
 
 <style>
-/* Enhanced Visual Features Styling */
+/* Enhanced WHO WE ARE Section */
+.enhanced-grid {
+  gap: 5rem;
+  align-items: center;
+}
+
+.enhanced-content {
+  position: relative;
+}
+
+.content-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.header-accent {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.enhanced-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+}
+
+.content-body {
+  margin-bottom: 2.5rem;
+}
+
+.highlight-paragraph {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--background-alt) 0%, rgba(245, 158, 11, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--accent-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.enhanced-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.content-footer {
+  margin-top: 2rem;
+}
+
+.achievement-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.badge i {
+  font-size: 1rem;
+}
+
+.enhanced-visual {
+  position: relative;
+}
+
+.enhanced-visual::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  right: -2rem;
+  bottom: -2rem;
+  background: linear-gradient(135deg, var(--background-alt) 0%, rgba(245, 158, 11, 0.03) 100%);
+  border-radius: var(--border-radius);
+  z-index: -1;
+}
+
+/* Fixed Process Timeline */
+.fixed-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 4rem auto 0;
+}
+
+.fixed-timeline::before {
+  content: '';
+  position: absolute;
+  left: 3rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-primary);
+  z-index: 1;
+}
+
+.process-step {
+  position: relative;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.process-number-container {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.process-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.process-step:hover .process-number {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.process-content {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0;
+}
+
+.process-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.05), transparent);
+  transition: left 0.8s ease;
+}
+
+.process-content:hover::before {
+  left: 100%;
+}
+
+.process-content:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--accent-color);
+}
+
+.process-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.process-content p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 992px) {
+  .fixed-timeline::before {
+    display: none;
+  }
+  
+  .process-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .process-number-container {
+    margin-bottom: 1rem;
+  }
+  
+  .enhanced-grid {
+    gap: 3rem;
+  }
+  
+  .header-accent {
+    display: none;
+  }
+  
+  .achievement-badges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .enhanced-content h3 {
+    font-size: 2rem;
+  }
+  
+  .highlight-paragraph {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+  .achievement-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .badge {
+    justify-content: center;
+    min-width: 200px;
+  }
+}
 .visual-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1463,7 +1757,58 @@
   color: var(--text-primary);
 }
 
-/* Enhanced Process Steps */
+/* Enhanced Process Steps - Fixed Overlapping */
+.process-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 4rem auto 0;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 3rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-primary);
+  z-index: 1;
+}
+
+.process-step {
+  position: relative;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.process-number-container {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.process-number {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.process-step:hover .process-number {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
 .process-content {
   flex: 1;
   background: var(--card-bg);
@@ -1471,11 +1816,11 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
-  margin: 0 2rem;
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   overflow: hidden;
+  margin: 0;
 }
 
 .process-content::before {
@@ -1499,29 +1844,35 @@
   border-color: var(--accent-color);
 }
 
-.process-number {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: var(--shadow-md);
-  z-index: 2;
-  transition: all 0.4s ease;
+.process-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
-.process-step:hover .process-number {
-  transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+.process-content p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive for Process */
+@media (max-width: 992px) {
+  .process-timeline::before {
+    display: none;
+  }
+  
+  .process-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .process-number-container {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Enhanced CTA Buttons */
