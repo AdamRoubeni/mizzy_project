@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -286,37 +295,50 @@
       animation: fadeInUp 1.2s ease-out;
     }
 
-    .hero-stats {
+    .hero-highlights {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 3rem auto 0;
       animation: fadeInUp 1.4s ease-out;
     }
 
-    .hero-stat {
+    .hero-highlight {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
       background: rgba(255, 255, 255, 0.1);
       border-radius: var(--border-radius);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
     }
 
-    .hero-stat-number {
+    .hero-highlight:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .hero-highlight-icon {
       font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--text-light);
+      color: var(--accent-color);
+      margin-bottom: 1rem;
       display: block;
-      margin-bottom: 0.5rem;
     }
 
-    .hero-stat-label {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .hero-highlight-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-highlight-text {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
     }
     
     /* About Content Sections */
@@ -783,7 +805,7 @@
         font-size: 2.5rem;
       }
 
-      .hero-stats {
+      .hero-highlights {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -866,7 +888,7 @@
         font-size: 1.1rem;
       }
 
-      .hero-stats {
+      .hero-highlights {
         grid-template-columns: 1fr;
       }
       
@@ -905,6 +927,10 @@
 
       .process-content {
         padding: 2rem;
+      }
+
+      .hero-highlight {
+        padding: 1.5rem 1rem;
       }
     }
     
@@ -972,32 +998,43 @@
   <section class="about-hero">
     <div class="about-hero-content">
       <h1>ABOUT ENE LTD</h1>
-      <p>Transforming B2B luxury commerce through 40+ years of industry expertise, authentic partnerships, and uncompromising quality standards.</p>
+      <p>Transforming B2B luxury commerce through decades of industry expertise, authentic partnerships, and uncompromising quality standards.</p>
 
       <p style="margin-top: 10px; font-size: 1.05rem;">
         ENE LTD isn't just a distributor — we're the engine behind thousands of luxury storefronts worldwide. From exclusive product access to seamless fulfillment, our platform is built for serious retailers who demand speed, authenticity, and competitive margins. We don't just move inventory — we move businesses forward.
       </p>
 
-      <div class="hero-stats">
-        <div class="hero-stat reveal">
-          <span class="hero-stat-number">40+</span>
-          <span class="hero-stat-label">Years Experience</span>
+      <div class="hero-highlights">
+        <div class="hero-highlight reveal">
+          <i class="hero-highlight-icon fas fa-award"></i>
+          <div class="hero-highlight-title">Industry Veterans</div>
+          <div class="hero-highlight-text">Decades of luxury goods expertise with deep market knowledge and proven track record</div>
         </div>
-        <div class="hero-stat reveal">
-          <span class="hero-stat-number">500+</span>
-          <span class="hero-stat-label">Brand Partners</span>
+        <div class="hero-highlight reveal">
+          <i class="hero-highlight-icon fas fa-handshake"></i>
+          <div class="hero-highlight-title">Trusted Partnerships</div>
+          <div class="hero-highlight-text">Exclusive relationships with premium brands and verified retail partners worldwide</div>
         </div>
-        <div class="hero-stat reveal">
-          <span class="hero-stat-number">10K+</span>
-          <span class="hero-stat-label">Business Clients</span>
+        <div class="hero-highlight reveal">
+          <i class="hero-highlight-icon fas fa-users"></i>
+          <div class="hero-highlight-title">Global Network</div>
+          <div class="hero-highlight-text">Thousands of satisfied business clients across multiple continents and markets</div>
         </div>
-        <div class="hero-stat reveal">
-          <span class="hero-stat-number">98%</span>
-          <span class="hero-stat-label">Partner Satisfaction</span>
+        <div class="hero-highlight reveal">
+          <i class="hero-highlight-icon fas fa-star"></i>
+          <div class="hero-highlight-title">Excellence Standard</div>
+          <div class="hero-highlight-text">Consistently high satisfaction rates through quality service and authentic products</div>
         </div>
       </div>
     </div>
   </section>
+
+
+
+
+  
+
+
 
   <!-- About Main Content -->
   <section class="about-main">
@@ -1024,22 +1061,26 @@
           </div>
           
           <div class="content-visual">
-            <div class="visual-stats">
-              <div class="visual-stat">
-                <span class="visual-stat-number">$2.5B+</span>
-                <span class="visual-stat-label">Annual Volume</span>
+            <div class="visual-features">
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-chart-line"></i>
+                <div class="feature-title">High-Volume Trading</div>
+                <div class="feature-text">Multi-billion dollar annual transaction volume across global luxury markets</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">50+</span>
-                <span class="visual-stat-label">Countries Served</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-globe-americas"></i>
+                <div class="feature-title">International Reach</div>
+                <div class="feature-text">Extensive global network spanning multiple continents and key luxury markets</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">24/7</span>
-                <span class="visual-stat-label">Support Available</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-headset"></i>
+                <div class="feature-title">Continuous Support</div>
+                <div class="feature-text">Round-the-clock customer service and dedicated account management</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">100%</span>
-                <span class="visual-stat-label">Authenticity Rate</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-shield-check"></i>
+                <div class="feature-title">Verified Authenticity</div>
+                <div class="feature-text">Rigorous authentication process ensuring genuine luxury products only</div>
               </div>
             </div>
           </div>
@@ -1055,22 +1096,26 @@
         
         <div class="content-grid">
           <div class="content-visual">
-            <div class="visual-stats">
-              <div class="visual-stat">
-                <span class="visual-stat-number">30+</span>
-                <span class="visual-stat-label">Product Categories</span>
+            <div class="visual-features">
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-layer-group"></i>
+                <div class="feature-title">Diverse Portfolio</div>
+                <div class="feature-text">Comprehensive luxury product range across multiple premium categories</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">500K+</span>
-                <span class="visual-stat-label">SKUs Available</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-warehouse"></i>
+                <div class="feature-title">Extensive Inventory</div>
+                <div class="feature-text">Vast selection of premium SKUs from verified luxury brand partners</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">48H</span>
-                <span class="visual-stat-label">Order Processing</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-shipping-fast"></i>
+                <div class="feature-title">Rapid Processing</div>
+                <div class="feature-text">Efficient order handling with expedited fulfillment and delivery</div>
               </div>
-              <div class="visual-stat">
-                <span class="visual-stat-number">95%</span>
-                <span class="visual-stat-label">Fill Rate</span>
+              <div class="visual-feature">
+                <i class="feature-icon fas fa-check-circle"></i>
+                <div class="feature-title">High Success Rate</div>
+                <div class="feature-text">Exceptional order completion and customer satisfaction performance</div>
               </div>
             </div>
           </div>
@@ -1104,7 +1149,7 @@
         <div class="value-card reveal">
           <i class="value-icon fas fa-certificate"></i>
           <h3>Authenticity Guarantee</h3>
-          <p>Every product undergoes rigorous authentication by our team of experts. We maintain a 100% authenticity rate through advanced verification processes and direct brand relationships.</p>
+          <p>Every product undergoes rigorous authentication by our team of experts. We maintain strict authenticity standards through advanced verification processes and direct brand relationships.</p>
         </div>
         <div class="value-card reveal">
           <i class="value-icon fas fa-handshake"></i>
@@ -1129,7 +1174,7 @@
         <div class="value-card reveal">
           <i class="value-icon fas fa-clock"></i>
           <h3>Operational Excellence</h3>
-          <p>Streamlined processes, advanced technology, and 24/7 support ensure efficient operations. We maintain industry-leading fill rates and delivery performance.</p>
+          <p>Streamlined processes, advanced technology, and continuous support ensure efficient operations. We maintain industry-leading performance and delivery standards.</p>
         </div>
       </div>
     </div>
@@ -1242,6 +1287,314 @@
     </div>
   </footer>
 
+<style>
+/* Enhanced Visual Features Styling */
+.visual-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.visual-feature {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--background);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.visual-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.visual-feature:hover::before {
+  left: 100%;
+}
+
+.visual-feature:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-alt) 100%);
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.visual-feature:hover .feature-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--accent-hover);
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+  font-family: 'Playfair Display', serif;
+  transition: color 0.3s ease;
+}
+
+.visual-feature:hover .feature-title {
+  color: var(--accent-color);
+}
+
+.feature-text {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.visual-feature:hover .feature-text {
+  color: var(--text-primary);
+}
+
+/* Enhanced Value Cards */
+.value-card {
+  background: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transition: height 0.4s ease;
+}
+
+.value-card:hover::before {
+  height: 8px;
+}
+
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.value-card:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.value-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.value-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  display: block;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.2) rotateY(360deg);
+  color: var(--accent-hover);
+}
+
+.value-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.value-card:hover h3 {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.value-card p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.value-card:hover p {
+  color: var(--text-primary);
+}
+
+/* Enhanced Process Steps */
+.process-content {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  margin: 0 2rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.process-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.05), transparent);
+  transition: left 0.8s ease;
+}
+
+.process-content:hover::before {
+  left: 100%;
+}
+
+.process-content:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--accent-color);
+}
+
+.process-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.process-step:hover .process-number {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Enhanced CTA Buttons */
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta-btn:hover::before {
+  left: 100%;
+}
+
+.cta-btn.primary {
+  background: var(--text-light);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--text-light);
+  color: var(--text-primary);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .visual-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .visual-feature {
+    padding: 1.5rem 1rem;
+  }
+  
+  .value-card {
+    padding: 2rem 1.5rem;
+  }
+}
+</style>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile menu toggle
@@ -1311,22 +1664,21 @@
       const username = localStorage.getItem('eneLoggedInUser');
       
       if (isLoggedIn && username) {
-  const loginIconElement = document.querySelector('.login-icon i');
-  if (loginIconElement) {
-    loginIconElement.className = 'fas fa-user-check';
-  }
+        const loginIconElement = document.querySelector('.login-icon i');
+        if (loginIconElement) {
+          loginIconElement.className = 'fas fa-user-check';
+        }
 
-  // Only show the welcome message once per session
-  const hasShownWelcome = sessionStorage.getItem('eneWelcomeShown');
-  if (!hasShownWelcome) {
-    setTimeout(() => {
-      showNotification(`Welcome back, ${username}! Access your partner dashboard.`, 'success');
-    }, 500);
-    sessionStorage.setItem('eneWelcomeShown', 'true');
-  }
-}
+        // Only show the welcome message once per session
+        const hasShownWelcome = sessionStorage.getItem('eneWelcomeShown');
+        if (!hasShownWelcome) {
+          setTimeout(() => {
+            showNotification(`Welcome back, ${username}! Access your partner dashboard.`, 'success');
+          }, 500);
+          sessionStorage.setItem('eneWelcomeShown', 'true');
+        }
+      }
 
-      
       // Login icon functionality
       const loginIcon = document.querySelector('.login-icon');
       if (loginIcon) {
@@ -1358,18 +1710,16 @@
         });
       });
       
+      // Enhanced animations for visual features
+      const visualFeatures = document.querySelectorAll('.visual-feature');
+      visualFeatures.forEach((feature, index) => {
+        feature.style.animationDelay = `${index * 0.1}s`;
+      });
+      
       // Enhanced animations for value cards
       const valueCards = document.querySelectorAll('.value-card');
       valueCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
-        
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-12px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1)';
-        });
       });
       
       // Process timeline animation
@@ -1394,7 +1744,7 @@
         });
       });
       
-      // Notification system (Updated for yellow theme)
+      // Notification system
       function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         notification.style.cssText = `
@@ -1443,5 +1793,3 @@
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
     });
   </script>
-</body>
-</html>
